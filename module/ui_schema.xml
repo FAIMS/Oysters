@@ -1,0 +1,458 @@
+<?xml version='1.0' encoding='utf-8'?>
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:jr="http://openrosa.org/javarosa" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>FILL THIS IN</h:title>
+    <model>
+      <instance>
+        <faims id="FILL_THIS_IN">
+          <!--START: Style-->
+          <style>
+            <orientation>
+              <orientation/>
+            </orientation>
+            <even>
+              <layout_weight/>
+            </even>
+            <large>
+              <layout_weight/>
+            </large>
+          </style>
+          <!--END: Style-->
+          <Login>
+            <User_login>
+              <Users/>
+              <Log_in/>
+              <Signup_Guide_1/>
+              <Sign_up/>
+            </User_login>
+          </Login>
+          <General>
+            <General>
+              <Start_Trip/>
+            </General>
+            <Search>
+              <Colgroup_0>
+                <Col_0>
+                  <Search_Term/>
+                </Col_0>
+                <Col_1>
+                  <Search_Button/>
+                </Col_1>
+              </Colgroup_0>
+              <Entity_Types/>
+              <Entity_List/>
+            </Search>
+          </General>
+          <Trip>
+            <Trip_data>
+              <Trip_author/>
+              <Colgroup_1>
+                <Col_1>
+                  <Date/>
+                </Col_1>
+                <Col_2>
+                  <Time/>
+                </Col_2>
+              </Colgroup_1>
+              <State/>
+              <Region/>
+              <Subregion/>
+              <Colgroup_2>
+                <Col_1>
+                  <Latitude/>
+                </Col_1>
+                <Col_2>
+                  <Longitude/>
+                </Col_2>
+              </Colgroup_2>
+              <Colgroup_3>
+                <Col_1>
+                  <Northing/>
+                </Col_1>
+                <Col_2>
+                  <Easting/>
+                </Col_2>
+                <Col_3>
+                  <Accuracy/>
+                </Col_3>
+              </Colgroup_3>
+              <Take_From_GPS_1/>
+            </Trip_data>
+            <Shoreline_attributes>
+              <Natural_habitat_types/>
+              <Artificial_habitat_types/>
+              <Dominant_habitat/>
+              <Habitat_photo/>
+              <Habitat_photo_Button_1/>
+              <Animals_present/>
+              <Shoreline_slope/>
+            </Shoreline_attributes>
+            <Aggregate>
+              <Add_Aggregate/>
+              <Existing_Aggregates/>
+            </Aggregate>
+          </Trip>
+          <Aggregate>
+            <Shellfish>
+              <Colgroup_1>
+                <Col_1>
+                  <Date/>
+                </Col_1>
+                <Col_2>
+                  <Time/>
+                </Col_2>
+              </Colgroup_1>
+              <Subregion/>
+              <Shellfish_type/>
+              <Shellfish_species/>
+              <Shellfish_Photo/>
+              <Shellfish_Photo_Button_1/>
+              <Primary_substrate/>
+              <Surrounding_substrate/>
+              <Shellfish_status/>
+            </Shellfish>
+            <Aggregation>
+              <Distance_to_water_in_m/>
+              <Size_of_aggregation/>
+              <Density_of_aggregation/>
+              <Aggregation_Photos/>
+              <Aggregation_Photos_Button_1/>
+            </Aggregation>
+          </Aggregate>
+        </faims>
+      </instance>
+    </model>
+  </h:head>
+  <h:body>
+    <!--START: Style-->
+    <group ref="style">
+      <label/>
+      <group ref="orientation">
+        <label/>
+        <input ref="orientation">
+          <label>horizontal</label>
+        </input>
+      </group>
+      <group ref="even">
+        <label/>
+        <input ref="layout_weight">
+          <label>1</label>
+        </input>
+      </group>
+      <group ref="large">
+        <label/>
+        <input ref="layout_weight">
+          <label>3</label>
+        </input>
+      </group>
+    </group>
+    <!--END: Style-->
+    <group ref="Login">
+      <label>{Login}</label>
+      <group ref="User_login">
+        <label>{User_login}</label>
+        <select1 ref="Users" faims_annotation="false" faims_certainty="false">
+          <label>{Users}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <trigger ref="Log_in">
+          <label>{Log_in}</label>
+        </trigger>
+        <input faims_web="true" ref="Signup_Guide_1">
+          <label/>
+        </input>
+        <trigger ref="Sign_up">
+          <label>{Sign_up}</label>
+        </trigger>
+      </group>
+    </group>
+    <group ref="General">
+      <label>{General}</label>
+      <group ref="General">
+        <label>{General}</label>
+        <trigger ref="Start_Trip">
+          <label>{Start_Trip}</label>
+        </trigger>
+      </group>
+      <group ref="Search" faims_scrollable="false">
+        <label>{Search}</label>
+        <group ref="Colgroup_0" faims_style="orientation">
+          <label/>
+          <group ref="Col_0" faims_style="even">
+            <label/>
+            <input ref="Search_Term">
+              <label>{Search_Term}</label>
+            </input>
+          </group>
+          <group ref="Col_1" faims_style="large">
+            <label/>
+            <trigger ref="Search_Button">
+              <label>{Search}</label>
+            </trigger>
+          </group>
+        </group>
+        <select1 ref="Entity_Types">
+          <label>{Entity_Types}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select1 appearance="compact" ref="Entity_List">
+          <label>{Entity_List}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+      </group>
+    </group>
+    <group ref="Trip" faims_archent_type="Trip">
+      <label>{Trip}</label>
+      <group ref="Trip_data">
+        <label>{Trip_data}</label>
+        <input faims_attribute_name="Trip author" faims_attribute_type="measure" ref="Trip_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
+          <label>{User}</label>
+        </input>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Trip Date" faims_attribute_type="measure" ref="Date" faims_read_only="true">
+              <label>{Date}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Time" faims_attribute_type="measure" ref="Time" faims_read_only="true">
+              <label>{Time}</label>
+            </input>
+          </group>
+        </group>
+        <select1 faims_attribute_name="State" faims_attribute_type="vocab" ref="State">
+          <label>{State}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select1 faims_attribute_name="Region" faims_attribute_type="vocab" ref="Region">
+          <label>{Region}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select1 faims_attribute_name="Trip Subregion" faims_attribute_type="vocab" ref="Subregion">
+          <label>{Subregion}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <group ref="Colgroup_2" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Latitude" faims_attribute_type="measure" ref="Latitude" faims_read_only="true">
+              <label>{Latitude}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Longitude" faims_attribute_type="measure" ref="Longitude" faims_read_only="true">
+              <label>{Longitude}</label>
+            </input>
+          </group>
+        </group>
+        <group ref="Colgroup_3" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Northing" faims_attribute_type="measure" ref="Northing" faims_read_only="true">
+              <label>{Northing}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Easting" faims_attribute_type="measure" ref="Easting" faims_read_only="true">
+              <label>{Easting}</label>
+            </input>
+          </group>
+          <group ref="Col_3" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Accuracy" faims_attribute_type="measure" ref="Accuracy" faims_read_only="true">
+              <label>{Accuracy}</label>
+            </input>
+          </group>
+        </group>
+        <trigger ref="Take_From_GPS_1">
+          <label>{Take_From_GPS}</label>
+        </trigger>
+      </group>
+      <group ref="Shoreline_attributes">
+        <label>{Shoreline_attributes}</label>
+        <select faims_attribute_name="Natural habitat types" faims_attribute_type="vocab" ref="Natural_habitat_types">
+          <label>{Natural_habitat_types}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select>
+        <select faims_attribute_name="Artificial habitat types" faims_attribute_type="vocab" ref="Artificial_habitat_types">
+          <label>{Artificial_habitat_types}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select>
+        <input faims_attribute_name="Dominant habitat" faims_attribute_type="measure" ref="Dominant_habitat">
+          <label>{Dominant_habitat}</label>
+        </input>
+        <select faims_sync="true" type="camera" faims_attribute_name="Habitat photo" faims_attribute_type="measure" ref="Habitat_photo">
+          <label>{Habitat_photo}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select>
+        <trigger ref="Habitat_photo_Button_1">
+          <label>{Habitat_photo}</label>
+        </trigger>
+        <select faims_attribute_name="Animals present" faims_attribute_type="vocab" ref="Animals_present">
+          <label>{Animals_present}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select>
+        <select1 faims_attribute_name="Shoreline slope" faims_attribute_type="vocab" ref="Shoreline_slope">
+          <label>{Shoreline_slope}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+      </group>
+      <group ref="Aggregate" faims_scrollable="false">
+        <label>{Aggregate}</label>
+        <trigger ref="Add_Aggregate" faims_annotation="false" faims_certainty="false">
+          <label>{Add_Aggregate}</label>
+        </trigger>
+        <select1 appearance="compact" ref="Existing_Aggregates" faims_annotation="false" faims_certainty="false">
+          <label>{Existing_Aggregates}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+      </group>
+    </group>
+    <group ref="Aggregate" faims_archent_type="Aggregate">
+      <label>{Aggregate}</label>
+      <group ref="Shellfish">
+        <label>{Shellfish}</label>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Aggregate Date" faims_attribute_type="measure" ref="Date" faims_read_only="true">
+              <label>{Date}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Time" faims_attribute_type="measure" ref="Time" faims_read_only="true">
+              <label>{Time}</label>
+            </input>
+          </group>
+        </group>
+        <input faims_attribute_name="Aggregate Subregion" faims_attribute_type="measure" ref="Subregion" faims_read_only="true" faims_annotation="false" faims_certainty="false">
+          <label>{Subregion}</label>
+        </input>
+        <select1 faims_attribute_name="Shellfish type" faims_attribute_type="vocab" ref="Shellfish_type">
+          <label>{Shellfish_type}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select1 type="image" faims_attribute_name="Shellfish species" faims_attribute_type="vocab" ref="Shellfish_species">
+          <label>{Shellfish_species}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select faims_sync="true" type="camera" faims_attribute_name="Shellfish Photo" faims_attribute_type="measure" ref="Shellfish_Photo">
+          <label>{Shellfish_Photo}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select>
+        <trigger ref="Shellfish_Photo_Button_1">
+          <label>{Shellfish_Photo}</label>
+        </trigger>
+        <select1 faims_attribute_name="Primary substrate" faims_attribute_type="vocab" ref="Primary_substrate">
+          <label>{Primary_substrate}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select1 faims_attribute_name="Surrounding substrate" faims_attribute_type="vocab" ref="Surrounding_substrate">
+          <label>{Surrounding_substrate}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select1 appearance="full" faims_attribute_name="Shellfish status" faims_attribute_type="vocab" ref="Shellfish_status">
+          <label>{Shellfish_status}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+      </group>
+      <group ref="Aggregation">
+        <label>{Aggregation}</label>
+        <select1 appearance="full" faims_attribute_name="Distance to water in m" faims_attribute_type="vocab" ref="Distance_to_water_in_m">
+          <label>{Distance_to_water__m_}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select1 type="image" faims_attribute_name="Size of aggregation" faims_attribute_type="vocab" ref="Size_of_aggregation">
+          <label>{Size_of_aggregation}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select1 faims_attribute_name="Density of aggregation" faims_attribute_type="vocab" ref="Density_of_aggregation">
+          <label>{Density_of_aggregation}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select faims_sync="true" type="camera" faims_attribute_name="Aggregation Photos" faims_attribute_type="measure" ref="Aggregation_Photos">
+          <label>{Aggregation_Photos}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select>
+        <trigger ref="Aggregation_Photos_Button_1">
+          <label>{Aggregation_Photos}</label>
+        </trigger>
+      </group>
+    </group>
+  </h:body>
+</h:html>

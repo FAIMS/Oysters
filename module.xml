@@ -1,0 +1,165 @@
+<?xml version="1.0" ?>
+<!--TODO: Search Logic, info box content, vocab, date and time logic -->
+<module>
+  <Login f="nodata">
+    <User_login>
+      <Users t="dropdown" f="user nocertainty noannotation"/>
+      <Log_in  t="button" ll="General"/>
+      <Sign_up t="button" l="signup"/>
+    </User_login>
+  </Login>
+
+  <General f="nodata">
+    <General>
+      <Start_Trip l="Trip"/>
+    </General>
+    <search/>
+  </General>
+
+  <Trip>
+    <fmt>{{Date}} {{Subregion}}</fmt>
+    <Trip_data>
+      <author f="nocertainty noannotation">
+        User
+      </author>
+      <cols>
+        <Date f="readonly"/>
+        <Time f="readonly"/>
+      </cols>
+      <State>
+        <opts>
+          <opt>NSW</opt>
+          <opt>VIC</opt>
+          <opt>QLD</opt>
+          <opt>SA</opt>
+          <opt>WA</opt>
+          <opt>TAS</opt>
+          <opt>NT</opt>
+        </opts>
+      </State>
+      <Region>
+        <opts>
+          <opt>NSW
+            <opt>Sydney region</opt>
+            <opt>South Coast</opt>
+            <opt>North Coast</opt>
+          </opt>
+          <opt>VIC
+            <opt>Port Phillip Bay</opt>
+            <opt>Westernport Bay</opt>
+            <opt>Western</opt>
+            <opt>Eastern</opt>
+          </opt>
+          <opt>QLD
+            <opt>South-East</opt>
+            <opt>Central</opt>
+            <opt>Far North</opt>
+          </opt>
+          <opt>SA
+            <opt>Gulf St Vincent</opt>
+            <opt>Spencer Gulf</opt>
+            <opt>Eastern</opt>
+            <opt>Western</opt>
+          </opt>
+          <opt>WA
+            <opt>Perth region</opt>
+            <opt>South-East</opt>
+            <opt>South-West</opt>
+            <opt>Coral Coast</opt>
+            <opt>Pilbara</opt>
+            <opt>Kimberley</opt>
+          </opt>
+          <opt>TAS
+            <opt>Hobart region</opt>
+            <opt>East</opt>
+            <opt>West</opt>
+            <opt>North</opt>
+          </opt>
+          <opt>NT
+            <opt>Darwin region</opt>
+            <opt>Arnhem Land</opt>
+            <opt>Katherine</opt>
+          </opt>
+        </opts>
+      </Region>
+      <Subregion>
+        <opts>
+        </opts>
+      </Subregion>
+      <gps/>
+    </Trip_data>
+    <Shoreline_attributes>
+      <Natural_habitat_types t="checkbox">
+        <opts>
+        </opts>
+      </Natural_habitat_types>
+      <Artificial_habitat_types t="checkbox">
+        <opts>
+        </opts>
+      </Artificial_habitat_types>
+      <Dominant_habitat/>
+      <Habitat_photo t="camera"/>
+      <Animals_present t="checkbox">
+        <opts>
+        </opts>
+      </Animals_present>
+      <Shoreline_slope>
+        <opts>
+        </opts>
+      </Shoreline_slope>
+    </Shoreline_attributes>
+    <Aggregate f="noscroll">
+      <Add_Aggregate t="button" f="nocertainty noannotation" lc="Aggregate"/>
+      <Existing_Aggregates t="list" f="nocertainty noannotation" ec="Aggregate"/>
+    </Aggregate>
+  </Trip>
+
+  <Aggregate>
+    <Shellfish>
+      <cols>
+        <Date f="readonly"/>
+        <Time f="readonly"/>
+      </cols>
+      <Subregion f="id nocertainty noannotation readonly" i="Trip/Trip_data/Subregion"/>
+      <Shellfish_type>
+        <opts>
+        </opts>
+      </Shellfish_type>
+      <Shellfish_species t="picture">
+        <opts>
+        </opts>
+      </Shellfish_species>
+      <Shellfish_Photo t="camera"/>
+      <Primary_substrate>
+        <opts>
+        </opts>
+      </Primary_substrate>
+      <Surrounding_substrate>
+        <opts>
+        </opts>
+      </Surrounding_substrate>
+      <Shellfish_status t="radio">
+        <opts>
+        </opts>
+      </Shellfish_status>
+    </Shellfish>
+    <Aggregation>
+      <Distance_to_water_in_m t="radio">
+        Distance to water (m)
+        <opts>
+        </opts>
+      </Distance_to_water_in_m>
+      <Size_of_aggregation t="picture">
+        <opts>
+        </opts>
+      </Size_of_aggregation>
+      <Density_of_aggregation>
+        <opts>
+        </opts>
+      </Density_of_aggregation>
+      <Aggregation_Photos t="camera"/>
+    </Aggregation>
+  </Aggregate>
+  <logic><![CDATA[
+  ]]></logic>
+</module>
