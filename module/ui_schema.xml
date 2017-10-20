@@ -221,7 +221,7 @@
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
-            <input faims_attribute_name="Trip Date" faims_attribute_type="measure" ref="Date" faims_read_only="true">
+            <input faims_attribute_name="Date" faims_attribute_type="measure" ref="Date" faims_read_only="true">
               <label>{Date}</label>
             </input>
           </group>
@@ -359,7 +359,7 @@
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
-            <input faims_attribute_name="Aggregate Date" faims_attribute_type="measure" ref="Date" faims_read_only="true">
+            <input faims_attribute_name="Date" faims_attribute_type="measure" ref="Date" faims_read_only="true">
               <label>{Date}</label>
             </input>
           </group>

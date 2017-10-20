@@ -84,27 +84,74 @@
       </Region>
       <Subregion>
         <opts>
+          <opt>Sydney region
+            <opt>Sydney Harbour</opt>
+            <opt>Parramatta River</opt>
+            <opt>Georges River</opt>
+            <opt>Port Hacking</opt>
+            <opt>Hawkesbury River</opt>
+            <opt>Other</opt>
+          </opt>
+          <opt>South Coast
+            <opt>Merimbula/Eden</opt>
+            <opt>Jervis Bay</opt>
+            <opt>Shoalhaven River</opt>
+            <opt>Other</opt>
+          </opt>
+          <opt>North Coast
+            <opt>Port Stephens</opt>
+            <opt>Port Macquarie</opt>
+            <opt>Other</opt>
+          </opt>
         </opts>
       </Subregion>
       <gps/>
     </Trip_data>
     <Shoreline_attributes>
       <Natural_habitat_types t="checkbox">
+        <desc>Identify the natural habitat types present at this location</desc>
         <opts>
+          <opt>Mudflat</opt>
+          <opt>Sandy beach</opt>
+          <opt>Rocky shore</opt>
+          <opt>Saltmarsh</opt>
+          <opt>Mangroves</opt>
         </opts>
       </Natural_habitat_types>
       <Artificial_habitat_types t="checkbox">
+        <desc>Identify the artificial habitat types present at this location</desc>
         <opts>
+          <opt>Concrete</opt>
+          <opt>Seawall</opt>
+          <opt>Riprap (large rocks)</opt>
+          <opt>Gravel</opt>
+          <opt>Wooden pier</opt>
         </opts>
       </Artificial_habitat_types>
-      <Dominant_habitat/>
-      <Habitat_photo t="camera"/>
+      <Dominant_habitat>
+        <desc>Note the habitat type that is dominant (i.e. takes up the most area) at this location</desc>
+      </Dominant_habitat>
+      <Habitat_photo t="camera">
+        <desc>Take a photo of the dominant habitat type and upload</desc>
+      </Habitat_photo>
       <Animals_present t="checkbox">
+        <desc>Scan the dominant habitat type and check any types of animals that you can easily see</desc>
         <opts>
+          <opt>Attached shellfish (oysters, mussels)</opt>
+          <opt>Other shellfish (clams, pipis)</opt>
+          <opt>Seabirds</opt>
+          <opt>Shorebirds (waders)</opt>
+          <opt>Fish</opt>
+          <opt>Crabs</opt>
+          <opt>Worms</opt>
         </opts>
       </Animals_present>
       <Shoreline_slope>
         <opts>
+          <opt>Vertical or near-vertical</opt>
+          <opt>Sloping &lt;45 degrees</opt>
+          <opt>Sloping &gt;45 degrees</opt>
+          <opt>Flat</opt>
         </opts>
       </Shoreline_slope>
     </Shoreline_attributes>
@@ -115,6 +162,7 @@
   </Trip>
 
   <Aggregate>
+    <fmt>{{Date}} {{Subregion}} {{Shellfish_species}}</fmt>
     <Shellfish>
       <cols>
         <Date f="readonly"/>
@@ -122,42 +170,130 @@
       </cols>
       <Subregion f="id nocertainty noannotation readonly" i="Trip/Trip_data/Subregion"/>
       <Shellfish_type>
+        <desc>What type of shellfish - oyster or mussel?</desc>
         <opts>
+          <opt>Oyster</opt>
+          <opt>Mussel</opt>
         </opts>
       </Shellfish_type>
       <Shellfish_species t="picture">
+        <desc>Choose your species from the following list. Species can be hard to tell apart so please also upload a photo</desc>
         <opts>
+          <opt p="gallery/SRO_AusMuseum.jpg">
+            Sydney Rock Oyster (Saccostrea glomerata)
+          </opt>
+          <opt p="gallery/Crassostrea_gigas_wikipedia.jpg">
+            Pacific Oyster (Crassostrea gigas)
+          </opt>
+          <opt p="gallery/blue_mussel_diggles.jpg">
+            Blue Mussel (Mytilus edulis)
+          </opt>
+          <opt p="gallery/o_angasi_alleway.jpg">
+            Mud Oyster (Ostrea angasi)
+          </opt>
+          <opt p="gallery/hairy_mussel.jpg">
+            Hairy Mussel (Trichomya hirsuta)
+          </opt>
+          <opt p="gallery/leaf_oyster.jpg">
+            Leaf Oyster (Isognomon ephippium)
+          </opt>
+          <opt p="gallery/p_albina.jpg">
+            Pearl Oyster (Pinctada albina sugillata)
+          </opt>
+          <opt p="gallery/saccostrea culcullata.jpg">
+            Coral-Rock Oyster (Saccostrea culcullata)
+          </opt>
+          <opt p="gallery/d_diggles_s_echinata.jpg">
+            Blacklip Oyster (Saccostrea echinata)
+          </opt>
         </opts>
       </Shellfish_species>
-      <Shellfish_Photo t="camera"/>
+      <Shellfish_Photo t="camera">
+        <desc>Upload a photo of the shellfish</desc>
+      </Shellfish_Photo>
       <Primary_substrate>
+        <desc>Identify the surface to which the shellfish is directly attached. (In this example, the oysters are directly attached to mangrove roots)</desc>
         <opts>
+          <opt>Natural
+            <opt>Mudflat</opt>
+            <opt>Sandy beach</opt>
+            <opt>Rocky shore</opt>
+            <opt>Saltmarsh</opt>
+            <opt>Mangroves</opt>
+          </opt>
+          <opt>Artificial
+            <opt>Concrete</opt>
+            <opt>Seawall</opt>
+            <opt>Rocks</opt>
+            <opt>Gravel</opt>
+            <opt>Wooden pier</opt>
+          </opt>
         </opts>
       </Primary_substrate>
       <Surrounding_substrate>
+        <desc>Identify the surface surrounding the shellfish aggregation. (In this example, the oysters are attached to mangrove roots, but the surrounding surface is mud)</desc>
         <opts>
+          <opt>Natural
+            <opt>Mudflat</opt>
+            <opt>Sandy beach</opt>
+            <opt>Rocky shore</opt>
+            <opt>Saltmarsh</opt>
+            <opt>Mangroves</opt>
+          </opt>
+          <opt>Artificial
+            <opt>Concrete</opt>
+            <opt>Seawall</opt>
+            <opt>Rocks</opt>
+            <opt>Gravel</opt>
+            <opt>Wooden pier</opt>
+          </opt>
         </opts>
       </Surrounding_substrate>
       <Shellfish_status t="radio">
+        <desc>Shellfish that are dead will have gaping shells that remain open when tapped. The photo shows a closed, live oyster (left) next to a gaping, dead oyster (right)</desc>
         <opts>
+          <opt>Mostly alive</opt>
+          <opt>Mostly dead</opt>
         </opts>
       </Shellfish_status>
     </Shellfish>
     <Aggregation>
       <Distance_to_water_in_m t="radio">
         Distance to water (m)
+        <desc>How far out of the water is the aggregation? Report in metres.</desc>
         <opts>
+          <opt>Under water</opt>
+          <opt>&gt;1m</opt>
+          <opt>1-5m</opt>
+          <opt>&gt;5m</opt>
         </opts>
       </Distance_to_water_in_m>
       <Size_of_aggregation t="picture">
+        <desc>How many shellfish are in the aggregation?</desc>
         <opts>
+          <opt p="gallery/oyster_small_agg.jpg">
+            Small (&lt;10 individuals)
+          </opt>
+          <opt p="gallery/oyster_agg_1m.jpg">
+            Medium (10-50)
+          </opt>
+          <opt p="gallery/large_aggregation.jpg">
+            Large (&gt;50)
+          </opt>
         </opts>
       </Size_of_aggregation>
       <Density_of_aggregation>
+        <desc>Choose an area within the aggregation to record. Estimate the number of shellfish that would cover the area provided by your mobile device. Use this number to categorise the density. </desc>
         <opts>
+          <opt>Sparse (&lt;3)</opt>
+          <opt>Moderately sparse (3-5)</opt>
+          <opt>Moderately dense (6-9)</opt>
+          <opt>Dense (&gt;10)</opt>
         </opts>
       </Density_of_aggregation>
-      <Aggregation_Photos t="camera"/>
+      <Aggregation_Photos t="camera">
+        <desc>Upload up to 5 photos of the aggregation from different positions. Keep your device the same distance from the aggregation each time. Note the distance (in paces or metres) in the annotation box. </desc>
+      </Aggregation_Photos>
     </Aggregation>
   </Aggregate>
   <logic><![CDATA[

@@ -305,6 +305,9 @@ DATA_REFS.add("Aggregate/Aggregation/Aggregation_Photos");
 
 
 HIER_REFS.add("Trip/Trip_data/Region");
+HIER_REFS.add("Trip/Trip_data/Subregion");
+HIER_REFS.add("Aggregate/Shellfish/Primary_substrate");
+HIER_REFS.add("Aggregate/Shellfish/Surrounding_substrate");
 
 TAB_GROUPS_AS_LIST.add("Login");
 TAB_GROUPS_AS_LIST.add("General");
@@ -320,9 +323,7 @@ TABS_AS_LIST.add("Trip/Aggregate");
 TABS_AS_LIST.add("Aggregate/Shellfish");
 TABS_AS_LIST.add("Aggregate/Aggregation");
 
-ATTRIB_NAMES_NON_STANDARD.put("Trip/Trip_data/Date", "Trip Date");
 ATTRIB_NAMES_NON_STANDARD.put("Trip/Trip_data/Subregion", "Trip Subregion");
-ATTRIB_NAMES_NON_STANDARD.put("Aggregate/Shellfish/Date", "Aggregate Date");
 ATTRIB_NAMES_NON_STANDARD.put("Aggregate/Shellfish/Subregion", "Aggregate Subregion");
 
 String getType(String ref) {
