@@ -243,8 +243,8 @@ REF_TO_TYPE.put("Trip/Shoreline_attributes/Habitat_photo", "camera");
 REF_TO_TYPE.put("Trip/Shoreline_attributes/Habitat_photo_Button_1", "button");
 REF_TO_TYPE.put("Trip/Shoreline_attributes/Animals_present", "checkbox");
 REF_TO_TYPE.put("Trip/Shoreline_attributes/Shoreline_slope", "dropdown");
-REF_TO_TYPE.put("Trip/Aggregate/Add_Aggregate", "button");
-REF_TO_TYPE.put("Trip/Aggregate/Existing_Aggregates", "list");
+REF_TO_TYPE.put("Trip/Aggregate/Add_Shellfish_Aggregation", "button");
+REF_TO_TYPE.put("Trip/Aggregate/Existing_Aggregations", "list");
 REF_TO_TYPE.put("Aggregate/Shellfish/Date", "input");
 REF_TO_TYPE.put("Aggregate/Shellfish/Time", "input");
 REF_TO_TYPE.put("Aggregate/Shellfish/Subregion", "input");
@@ -2983,12 +2983,12 @@ void onClickLoginLogin () {
   showVerifyUserDialog("onValidClickLoginLogin()");
 }
 
-void onClickTripAddAggregate () {
+void onClickTripAddShellfishAggregation () {
   newAggregate("Trip");
 }
 addOnEvent("General/General/Start_Trip", "click", "onClickGeneralStartTrip()");
 addOnEvent("Login/User_login/Log_in", "click", "onClickLoginLogin()");
-addOnEvent("Trip/Aggregate/Add_Aggregate", "click", "onClickTripAddAggregate()");
+addOnEvent("Trip/Aggregate/Add_Shellfish_Aggregation", "click", "onClickTripAddShellfishAggregation()");
 
 /******************************************************************************/
 /*                   AUDIO, CAMERA, FILE AND VIDEO BINDINGS                   */
@@ -3835,7 +3835,7 @@ String getEntityMenuPopulationFunction(String[] menuDescriptor) {
 
 ENTITY_MENUS = new ArrayList();
 ENTITY_MENUS.add(new String[] {
-    "Trip/Aggregate/Existing_Aggregates",
+    "Trip/Aggregate/Existing_Aggregations",
     "getUuid(\"Trip\")",
     "Aggregate",
     "Trip - Aggregate"
@@ -3855,7 +3855,7 @@ for (m : ENTITY_MENUS) {
   addOnEvent(ref, evt, cmd);
 }
 
-addOnEvent("Trip/Aggregate/Existing_Aggregates", "click", "loadEntity()");
+addOnEvent("Trip/Aggregate/Existing_Aggregations", "click", "loadEntity()");
 /******************************************************************************/
 /*                             HANDWRITTEN LOGIC                              */
 /******************************************************************************/

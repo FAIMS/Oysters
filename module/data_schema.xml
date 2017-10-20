@@ -143,7 +143,7 @@
       <appendCharacterString> - </appendCharacterString>
     </property>
     <property name="Natural habitat types" type="vocab">
-      <description>Identify the natural habitat types present at this location</description>
+      <description>Identify the natural habitat type(s) present at this location</description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
@@ -160,7 +160,7 @@
       </lookup>
     </property>
     <property name="Artificial habitat types" type="vocab">
-      <description>Identify the artificial habitat types present at this location</description>
+      <description>Identify the artificial habitat type(s) present at this location</description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
@@ -177,17 +177,17 @@
       </lookup>
     </property>
     <property name="Dominant habitat" type="measure">
-      <description>Note the habitat type that is dominant (i.e. takes up the most area) at this location</description>
+      <description>Note the habitat type that is dominant (takes up the most area) at this location</description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
     <property name="Habitat photo" type="file" file="true" thumbnail="true">
-      <description>Take a photo of the dominant habitat type and upload</description>
+      <description>Take a photo of the dominant habitat type</description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
     <property name="Animals present" type="vocab">
-      <description>Scan the dominant habitat type and check any types of animals that you can easily see</description>
+      <description>Scan the dominant habitat type and check any types of animals that you can see easily. Please enter further details for any aggregations of attached shellfish.</description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
@@ -236,7 +236,7 @@
       <appendCharacterString> - </appendCharacterString>
     </property>
     <property name="Shellfish species" type="vocab" isIdentifier="true">
-      <description>Choose your species from the following list. Species can be hard to tell apart so please also upload a photo</description>
+      <description>Choose your species from the following list. Species can be hard to tell apart so please also upload a photo for validation</description>
       <formatString> $1</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
@@ -254,7 +254,7 @@
 <description></description></term>
         <term pictureURL="files/data/gallery/p_albina.jpg">{Pearl_Oyster__Pinctada_albina_sugillata_}
 <description></description></term>
-        <term pictureURL="files/data/culcullata.jpg gallery/saccostrea">{Coral_Rock_Oyster__Saccostrea_culcullata_}
+        <term pictureURL="files/data/gallery/Saccostrea_cucullata.jpg">{Coral_Rock_Oyster__Saccostrea_culcullata_}
 <description></description></term>
         <term pictureURL="files/data/gallery/d_diggles_s_echinata.jpg">{Blacklip_Oyster__Saccostrea_echinata_}
 <description></description></term>
@@ -266,23 +266,25 @@
       <appendCharacterString> - </appendCharacterString>
     </property>
     <property name="Shellfish type" type="vocab">
-      <description>What type of shellfish - oyster or mussel?</description>
+      <description>What type of attached shellfish have you found - oysters or mussels?</description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
-        <term>{Oyster}
+        <term>{Oysters}
 <description></description></term>
-        <term>{Mussel}
+        <term>{Mussels}
 <description></description></term>
       </lookup>
     </property>
     <property name="Shellfish Photo" type="file" file="true" thumbnail="true">
-      <description>Upload a photo of the shellfish</description>
+      <description>Take a close-up photo of the shellfish</description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
     <property name="Primary substrate" type="vocab">
-      <description>Identify the surface to which the shellfish is directly attached. (In this example, the oysters are directly attached to mangrove roots)</description>
+      <description>
+          Identify the surface to which the shellfish is directly attached. (In this example, the oysters are directly attached to mangrove roots but the surrouding surface is mud)
+        </description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
@@ -303,7 +305,7 @@
       </lookup>
     </property>
     <property name="Surrounding substrate" type="vocab">
-      <description>Identify the surface surrounding the shellfish aggregation. (In this example, the oysters are attached to mangrove roots, but the surrounding surface is mud)</description>
+      <description>Identify the surface surrounding the shellfish aggregation. (In this example, the musselfs are attached to rock and the surrounding surface is also rock)</description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
@@ -324,7 +326,7 @@
       </lookup>
     </property>
     <property name="Shellfish status" type="vocab">
-      <description>Shellfish that are dead will have gaping shells that remain open when tapped. The photo shows a closed, live oyster (left) next to a gaping, dead oyster (right)</description>
+      <description>Shellfish that are dead will have gaping shells that remain open if tapped. The photo shows a closed, live oyster (left) next to a gaping, dead oyster (right)</description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
@@ -363,22 +365,22 @@
       </lookup>
     </property>
     <property name="Density of aggregation" type="vocab">
-      <description>Choose an area within the aggregation to record. Estimate the number of shellfish that would cover the area provided by your mobile device. Use this number to categorise the density. </description>
+      <description>Choose an area where the shellfish are densely packed. Estimate the number of shellfish that would cover the area provided by your mobile device. Use this number to categorise the density.</description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
         <term>{Sparse___3_}
 <description></description></term>
-        <term>{Moderately_sparse__3_5_}
+        <term>{Moderately_Sparse__3_5_}
 <description></description></term>
-        <term>{Moderately_dense__6_9_}
+        <term>{Dense__6_9_}
 <description></description></term>
-        <term>{Dense___10_}
+        <term>{Very_dense___10_}
 <description></description></term>
       </lookup>
     </property>
     <property name="Aggregation Photos" type="file" file="true" thumbnail="true">
-      <description>Upload up to 5 photos of the aggregation from different positions. Keep your device the same distance from the aggregation each time. Note the distance (in paces or metres) in the annotation box. </description>
+      <description>Take up to 5 photos of the aggregation from different positions. Keep your device at the same distance from the aggregation each time. Note this distance (in paces or metres) in the annotation box.</description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>

@@ -88,8 +88,8 @@
               <Shoreline_slope/>
             </Shoreline_attributes>
             <Aggregate>
-              <Add_Aggregate/>
-              <Existing_Aggregates/>
+              <Add_Shellfish_Aggregation/>
+              <Existing_Aggregations/>
             </Aggregate>
           </Trip>
           <Aggregate>
@@ -339,11 +339,11 @@
       </group>
       <group ref="Aggregate" faims_scrollable="false">
         <label>{Aggregate}</label>
-        <trigger ref="Add_Aggregate" faims_annotation="false" faims_certainty="false">
-          <label>{Add_Aggregate}</label>
+        <trigger ref="Add_Shellfish_Aggregation" faims_annotation="false" faims_certainty="false">
+          <label>{Add_Shellfish_Aggregation}</label>
         </trigger>
-        <select1 appearance="compact" ref="Existing_Aggregates" faims_annotation="false" faims_certainty="false">
-          <label>{Existing_Aggregates}</label>
+        <select1 appearance="compact" ref="Existing_Aggregations" faims_annotation="false" faims_certainty="false">
+          <label>{Existing_Aggregations}</label>
           <item>
             <label>Options not loaded</label>
             <value>Options not loaded</value>
