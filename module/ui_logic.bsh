@@ -3860,6 +3860,23 @@ addOnEvent("Trip/Aggregate/Existing_Aggregates", "click", "loadEntity()");
 /*                             HANDWRITTEN LOGIC                              */
 /******************************************************************************/
 
+/****************************** DATE/TIME POPULATION *******************************/
+void setDateTime(String ref, String fmt) {
+  date    = new Date();
+  dateFmt = new java.text.SimpleDateFormat(fmt);
+  dateStr = dateFmt.format(date);
+  if(dateStr.endsWith(".")){
+    dateStr = dateStr.substring(0, dateStr.length()-1);
+  }
+  setFieldValue(ref, dateStr);
+}
+
+addOnEvent("Trip", "create", "setDateTime(\"Trip/Trip_data/Date\",\"yyyy-MM-dd\")");
+addOnEvent("Trip", "create", "setDateTime(\"Trip/Trip_data/Time\",\"HH:mm:ss\")");
+
+
+addOnEvent("Aggregate", "create", "setDateTime(\"Aggregate/Shellfish/Date\",\"yyyy-MM-dd\")");
+addOnEvent("Aggregate", "create", "setDateTime(\"Aggregate/Shellfish/Time\",\"HH:mm:ss\")");
   
 
 /******************************************************************************/
