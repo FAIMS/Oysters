@@ -211,51 +211,184 @@
       <Shellfish_Photo t="camera">
         <desc>Take a close-up photo of the shellfish</desc>
       </Shellfish_Photo>
-      <Primary_substrate>
+      <Primary_substrate f="htmldesc">
         <desc>
-          Identify the surface to which the shellfish is directly attached. (In this example, the oysters are directly attached to mangrove roots but the surrouding surface is mud)
-        </desc>
-        <opts>
-          <opt>Natural
-            <opt>Mudflat</opt>
-            <opt>Sandy beach</opt>
-            <opt>Rocky shore</opt>
-            <opt>Saltmarsh</opt>
-            <opt>Mangroves</opt>
-          </opt>
-          <opt>Artificial
-            <opt>Concrete</opt>
-            <opt>Seawall</opt>
-            <opt>Rocks</opt>
-            <opt>Gravel</opt>
-            <opt>Wooden pier</opt>
-          </opt>
-        </opts>
+          <![CDATA[
+            <i>Description:</i>
+            <br>
+            <div>
+                <p>Identify the surface to which the shellfish is directly attached. (In this example, the oysters are directly attached to mangrove roots but the surrouding surface is mud)
+              </p>
+                <div>
+                  <img style="width:100%" src="files/data/gallery/oysters_mangroves.jpg" alt="files/data/gallery/oysters_mangroves.jpg"/>
+                </div>
+            </div>
+          ]]>
+            </desc>
+            <opts>
+              <opt>Natural
+                <desc><![CDATA[
+
+                  ]]></desc>
+                <opt>Mudflat
+                  <desc><![CDATA[
+
+                    ]]></desc>
+                </opt>
+                <opt>Sandy beach
+                  <desc><![CDATA[
+
+                    ]]></desc>
+                </opt>
+                <opt>Rocky shore
+                  <desc><![CDATA[
+
+                    ]]></desc>
+                </opt>
+                <opt>Saltmarsh
+                  <desc><![CDATA[
+
+                    ]]></desc>
+                </opt>
+                <opt>Mangroves
+                  <desc><![CDATA[
+
+                    ]]></desc>
+                </opt>
+              </opt>
+              <opt>Artificial
+                <desc><![CDATA[
+
+                  ]]></desc>
+                <opt>Concrete
+                  <desc><![CDATA[
+
+                    ]]></desc>
+                </opt>
+                <opt>Seawall
+                  <desc><![CDATA[
+
+                    ]]></desc>
+                </opt>
+                <opt>Rocks
+                  <desc><![CDATA[
+
+                    ]]></desc>
+                </opt>
+                <opt>Gravel
+                  <desc><![CDATA[
+
+                    ]]></desc>
+                </opt>
+                <opt>Wooden pier
+                  <desc><![CDATA[
+
+                    ]]></desc>
+                </opt>
+              </opt>
+            </opts>
       </Primary_substrate>
-      <Surrounding_substrate>
-        <desc>Identify the surface surrounding the shellfish aggregation. (In this example, the musselfs are attached to rock and the surrounding surface is also rock)</desc>
+      <Surrounding_substrate f="htmldesc">
+        <desc>
+          <![CDATA[
+            <i>Description:</i>
+            <br>
+            <div>
+                <p>Identify the surface surrounding the shellfish aggregation. (In this example, the musselfs are attached to rock and the surrounding surface is also rock)
+              </p>
+                <div>
+                  <img style="width:100%" src="files/data/gallery/blue_mussel_clump_wikipedia.jpg" alt="files/data/gallery/blue_mussel_clump_wikipedia.jpg"/>
+                </div>
+            </div>
+          ]]>
+          </desc>
         <opts>
           <opt>Natural
-            <opt>Mudflat</opt>
-            <opt>Sandy beach</opt>
-            <opt>Rocky shore</opt>
-            <opt>Saltmarsh</opt>
-            <opt>Mangroves</opt>
+            <desc><![CDATA[
+
+              ]]></desc>
+            <opt>Mudflat
+              <desc><![CDATA[
+
+                ]]></desc>
+            </opt>
+            <opt>Sandy beach
+              <desc><![CDATA[
+
+                ]]></desc>
+            </opt>
+            <opt>Rocky shore
+              <desc><![CDATA[
+
+                ]]></desc>
+            </opt>
+            <opt>Saltmarsh
+              <desc><![CDATA[
+
+                ]]></desc>
+            </opt>
+            <opt>Mangroves
+              <desc><![CDATA[
+
+                ]]></desc>
+            </opt>
           </opt>
           <opt>Artificial
-            <opt>Concrete</opt>
-            <opt>Seawall</opt>
-            <opt>Rocks</opt>
-            <opt>Gravel</opt>
-            <opt>Wooden pier</opt>
+            <desc><![CDATA[
+
+              ]]></desc>
+            <opt>Concrete
+              <desc><![CDATA[
+
+                ]]></desc>
+            </opt>
+            <opt>Seawall
+              <desc><![CDATA[
+
+                ]]></desc>
+            </opt>
+            <opt>Rocks
+              <desc><![CDATA[
+
+                ]]></desc>
+            </opt>
+            <opt>Gravel
+              <desc><![CDATA[
+
+                ]]></desc>
+            </opt>
+            <opt>Wooden pier
+              <desc><![CDATA[
+
+                ]]></desc>
+            </opt>
           </opt>
         </opts>
       </Surrounding_substrate>
-      <Shellfish_status t="radio">
-        <desc>Shellfish that are dead will have gaping shells that remain open if tapped. The photo shows a closed, live oyster (left) next to a gaping, dead oyster (right)</desc>
-        <opts>
-          <opt>Mostly alive</opt>
-          <opt>Mostly dead</opt>
+      <Shellfish_status t="radio" f="htmldesc">
+        <desc>
+          <![CDATA[
+            <i>Description:</i>
+            <br>
+            <div>
+                <p>Shellfish that are dead will have gaping shells that remain open if tapped. The photo shows a closed, live oyster (left) next to a gaping, dead oyster (right)</p>
+                <div>
+                  <img style="width:100%" src="files/data/gallery/alive_dead.jpg" alt="files/data/gallery/alive_dead.jpg"/>
+                </div>
+            </div>
+          ]]>
+        </desc>
+          <opts>
+          <opt>Mostly alive
+            <desc><![CDATA[
+
+              ]]></desc>
+          </opt>
+          <opt>Mostly dead
+            <desc><![CDATA[
+
+              ]]></desc>
+          </opt>
         </opts>
       </Shellfish_status>
     </Shellfish>

@@ -397,21 +397,21 @@
         <trigger ref="Shellfish_Photo_Button_1">
           <label>{Shellfish_Photo}</label>
         </trigger>
-        <select1 faims_attribute_name="Primary substrate" faims_attribute_type="vocab" ref="Primary_substrate">
+        <select1 faims_attribute_name="Primary substrate" faims_attribute_type="vocab" ref="Primary_substrate" faims_html_description="true">
           <label>{Primary_substrate}</label>
           <item>
             <label>Options not loaded</label>
             <value>Options not loaded</value>
           </item>
         </select1>
-        <select1 faims_attribute_name="Surrounding substrate" faims_attribute_type="vocab" ref="Surrounding_substrate">
+        <select1 faims_attribute_name="Surrounding substrate" faims_attribute_type="vocab" ref="Surrounding_substrate" faims_html_description="true">
           <label>{Surrounding_substrate}</label>
           <item>
             <label>Options not loaded</label>
             <value>Options not loaded</value>
           </item>
         </select1>
-        <select1 appearance="full" faims_attribute_name="Shellfish status" faims_attribute_type="vocab" ref="Shellfish_status">
+        <select1 appearance="full" faims_attribute_name="Shellfish status" faims_attribute_type="vocab" ref="Shellfish_status" faims_html_description="true">
           <label>{Shellfish_status}</label>
           <item>
             <label>Options not loaded</label>

@@ -283,57 +283,142 @@
     </property>
     <property name="Primary substrate" type="vocab">
       <description>
-          Identify the surface to which the shellfish is directly attached. (In this example, the oysters are directly attached to mangrove roots but the surrouding surface is mud)
+          
+            &lt;i&gt;Description:&lt;/i&gt;
+            &lt;br&gt;
+            &lt;div&gt;
+                &lt;p&gt;Identify the surface to which the shellfish is directly attached. (In this example, the oysters are directly attached to mangrove roots but the surrouding surface is mud)
+              &lt;/p&gt;
+                &lt;div&gt;
+                  &lt;img style="width:100%" src="files/data/gallery/oysters_mangroves.jpg" alt="files/data/gallery/oysters_mangroves.jpg"/&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+          
+            </description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Natural}
+<description>
+
+                  </description><term>{Mudflat}
+<description>
+
+                    </description></term><term>{Sandy_beach}
+<description>
+
+                    </description></term><term>{Rocky_shore}
+<description>
+
+                    </description></term><term>{Saltmarsh}
+<description>
+
+                    </description></term><term>{Mangroves}
+<description>
+
+                    </description></term></term>
+        <term>{Artificial}
+<description>
+
+                  </description><term>{Concrete}
+<description>
+
+                    </description></term><term>{Seawall}
+<description>
+
+                    </description></term><term>{Rocks}
+<description>
+
+                    </description></term><term>{Gravel}
+<description>
+
+                    </description></term><term>{Wooden_pier}
+<description>
+
+                    </description></term></term>
+      </lookup>
+    </property>
+    <property name="Surrounding substrate" type="vocab">
+      <description>
+          
+            &lt;i&gt;Description:&lt;/i&gt;
+            &lt;br&gt;
+            &lt;div&gt;
+                &lt;p&gt;Identify the surface surrounding the shellfish aggregation. (In this example, the musselfs are attached to rock and the surrounding surface is also rock)
+              &lt;/p&gt;
+                &lt;div&gt;
+                  &lt;img style="width:100%" src="files/data/gallery/blue_mussel_clump_wikipedia.jpg" alt="files/data/gallery/blue_mussel_clump_wikipedia.jpg"/&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+          
+          </description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Natural}
+<description>
+
+              </description><term>{Mudflat}
+<description>
+
+                </description></term><term>{Sandy_beach}
+<description>
+
+                </description></term><term>{Rocky_shore}
+<description>
+
+                </description></term><term>{Saltmarsh}
+<description>
+
+                </description></term><term>{Mangroves}
+<description>
+
+                </description></term></term>
+        <term>{Artificial}
+<description>
+
+              </description><term>{Concrete}
+<description>
+
+                </description></term><term>{Seawall}
+<description>
+
+                </description></term><term>{Rocks}
+<description>
+
+                </description></term><term>{Gravel}
+<description>
+
+                </description></term><term>{Wooden_pier}
+<description>
+
+                </description></term></term>
+      </lookup>
+    </property>
+    <property name="Shellfish status" type="vocab">
+      <description>
+          
+            &lt;i&gt;Description:&lt;/i&gt;
+            &lt;br&gt;
+            &lt;div&gt;
+                &lt;p&gt;Shellfish that are dead will have gaping shells that remain open if tapped. The photo shows a closed, live oyster (left) next to a gaping, dead oyster (right)&lt;/p&gt;
+                &lt;div&gt;
+                  &lt;img style="width:100%" src="files/data/gallery/alive_dead.jpg" alt="files/data/gallery/alive_dead.jpg"/&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+          
         </description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
-        <term>{Natural}
-<description></description><term>{Mudflat}
-<description></description></term><term>{Sandy_beach}
-<description></description></term><term>{Rocky_shore}
-<description></description></term><term>{Saltmarsh}
-<description></description></term><term>{Mangroves}
-<description></description></term></term>
-        <term>{Artificial}
-<description></description><term>{Concrete}
-<description></description></term><term>{Seawall}
-<description></description></term><term>{Rocks}
-<description></description></term><term>{Gravel}
-<description></description></term><term>{Wooden_pier}
-<description></description></term></term>
-      </lookup>
-    </property>
-    <property name="Surrounding substrate" type="vocab">
-      <description>Identify the surface surrounding the shellfish aggregation. (In this example, the musselfs are attached to rock and the surrounding surface is also rock)</description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-      <lookup>
-        <term>{Natural}
-<description></description><term>{Mudflat}
-<description></description></term><term>{Sandy_beach}
-<description></description></term><term>{Rocky_shore}
-<description></description></term><term>{Saltmarsh}
-<description></description></term><term>{Mangroves}
-<description></description></term></term>
-        <term>{Artificial}
-<description></description><term>{Concrete}
-<description></description></term><term>{Seawall}
-<description></description></term><term>{Rocks}
-<description></description></term><term>{Gravel}
-<description></description></term><term>{Wooden_pier}
-<description></description></term></term>
-      </lookup>
-    </property>
-    <property name="Shellfish status" type="vocab">
-      <description>Shellfish that are dead will have gaping shells that remain open if tapped. The photo shows a closed, live oyster (left) next to a gaping, dead oyster (right)</description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-      <lookup>
         <term>{Mostly_alive}
-<description></description></term>
+<description>
+
+              </description></term>
         <term>{Mostly_dead}
-<description></description></term>
+<description>
+
+              </description></term>
       </lookup>
     </property>
     <property name="Distance to water in m" type="vocab">
