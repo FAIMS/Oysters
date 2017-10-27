@@ -1,5 +1,6 @@
 <?xml version="1.0" ?>
 <!--TODO: Search Logic, info box content, vocab, date and time logic -->
+<!--@POSTPROC: ./proc/post.sh-->
 <module>
   <Login f="nodata">
     <User_login>
@@ -433,5 +434,6 @@
   </Aggregate>
   <logic><![CDATA[
     <!--@SOURCE: logic/date_time.bsh-->
+    <!--@SOURCE: logic/custom_dropdown_for_search.bsh-->
   ]]></logic>
 </module>

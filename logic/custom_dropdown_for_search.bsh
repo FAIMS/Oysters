@@ -1,0 +1,38 @@
+/****************************** DROPDOWN FOR SEARCH *******************************/
+void setDropdownByVocab(String vocabName, String ref) {
+  List regionList = new ArrayList();
+
+  fetchAll("select vocabname from vocabulary left join attributekey using (attributeid) where attributename = '" + vocabName + "';", new FetchCallback() {
+    onFetch(result) {
+      if (isNull(result))
+        result = new ArrayList();
+      Set vocabSet = new LinkedHashSet();
+      //vocabSet.add("All");
+      for(item : result){
+        String s = guessArch16nValFromKey(item.get(0));
+        vocabSet.add(s);
+      }
+      regionList.addAll(vocabSet);
+      populateDropDown(ref,regionList,true);
+    }
+  });
+
+}
+addOnEvent("General/Search", "show", "populateHierarchicalDropDown(\"General/Search/Select_Subregion\", \"Trip Subregion\", true)");
+addOnEvent("General/Search", "show", "populateHierarchicalDropDown(\"General/Search/Select_Region\",\"Region\", true)");
+addOnEvent("General/Search", "show", "setDropdownByVocab(\"State\",\"General/Search/Select_State\")");
+addOnEvent("General/Search", "show", "populateSelectUser()");
+void populateSelectUser(){
+  String refSearchUsers = "General/Search/Select_User";
+  String getNonDeletedUsersQuery = "SELECT userid, fname || ' ' || lname "+
+                                   "  FROM user "+
+                                   " WHERE userdeleted is null "+
+                                   " UNION " +
+                                   "SELECT -1, '{All}'";
+
+  fetchAll(getNonDeletedUsersQuery, new FetchCallback() {
+    onFetch(result) {
+      populateDropDown(refSearchUsers, result, false);
+    }
+  });
+}
