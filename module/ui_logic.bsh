@@ -3956,6 +3956,8 @@ addOnEvent("Trip", "create", "setDateTime(\"Trip/Trip_data/Time\",\"HH:mm:ss\")"
 addOnEvent("Aggregate", "create", "setDateTime(\"Aggregate/Shellfish/Date\",\"yyyy-MM-dd\")");
 addOnEvent("Aggregate", "create", "setDateTime(\"Aggregate/Shellfish/Time\",\"HH:mm:ss\")");
 /****************************** DROPDOWN FOR SEARCH *******************************/
+addOnEvent("General/Search/Select_Subregion", "click", "search()");
+addOnEvent("General/Search/Select_User", "click", "search()");
 void setDropdownByVocab(String vocabName, String ref) {
   List regionList = new ArrayList();
 
@@ -3976,8 +3978,8 @@ void setDropdownByVocab(String vocabName, String ref) {
 
 }
 addOnEvent("General/Search", "show", "populateHierarchicalDropDown(\"General/Search/Select_Subregion\", \"Trip Subregion\", true)");
-addOnEvent("General/Search", "show", "populateHierarchicalDropDown(\"General/Search/Select_Region\",\"Region\", true)");
-addOnEvent("General/Search", "show", "setDropdownByVocab(\"State\",\"General/Search/Select_State\")");
+//addOnEvent("General/Search", "show", "populateHierarchicalDropDown(\"General/Search/Select_Region\",\"Region\", true)");
+//addOnEvent("General/Search", "show", "setDropdownByVocab(\"State\",\"General/Search/Select_State\")");
 addOnEvent("General/Search", "show", "populateSelectUser()");
 void populateSelectUser(){
   String refSearchUsers = "General/Search/Select_User";
@@ -3992,6 +3994,53 @@ void populateSelectUser(){
       populateDropDown(refSearchUsers, result, false);
     }
   });
+}
+/****************************** SEARCH EXTENSION ******************************/
+/* Implements an extension to the search page which allows users to           */
+/* constrain their searches by existing column                                */
+/******************************************************************************/
+void search(){
+  String tabgroup = "General";
+  String refEntityList  = tabgroup + "/Search/Entity_List";
+  String refSearchTerm  = tabgroup + "/Search/Search_Term";
+  String refEntityTypes = tabgroup + "/Search/Entity_Types";
+  String refSelectUser = tabgroup + "/Search/Select_User";
+  String refSubregion = tabgroup + "/Search/Select_Subregion";
+
+  String type = getFieldValue(refEntityTypes);
+  String term = getFieldValue(refSearchTerm);
+
+  String user = getFieldValue(refSelectUser);
+  String subregion = getFieldValue(refSubregion);
+
+
+
+  String searchQuery = "select uuid, response " +
+                       " from latestNonDeletedArchEntFormattedIdentifiers " +
+                       "where (aenttypename LIKE '{type}' OR '' = '{type}' ) " +
+                       " AND (substr(uuid,2,5) = ltrim('0000' || {user}) " +
+                       " OR {user} = -1) " +
+                       " and (uuid in (select uuid " +
+                       "                from latestnondeletedaentvalue " +
+                       "                where vocabid = '{subregionId}') " +
+                       "        OR '{subregionId}' = 'null') " +
+                       " ORDER BY response " +
+                       " LIMIT ? " +
+                       "OFFSET ? ";
+
+
+   searchQuery = replaceFirst(searchQuery, "{type}", type);
+   searchQuery = replaceFirst(searchQuery, "{type}", type);
+   searchQuery = replaceFirst(searchQuery, "{user}", user);
+   searchQuery = replaceFirst(searchQuery, "{user}", user);
+   searchQuery = replaceFirst(searchQuery, "{subregionId}", subregion);
+   searchQuery = replaceFirst(searchQuery, "{subregionId}", subregion);
+
+
+  populateCursorList(refEntityList, searchQuery, 25);
+  refreshTabgroupCSS("General");
+
+  Log.d("Module", "Search query: " + searchQuery);
 }
   
 

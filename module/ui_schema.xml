@@ -49,14 +49,8 @@
               </Colgroup_1>
               <Colgroup_2>
                 <Col_0>
-                  <Select_State/>
-                </Col_0>
-                <Col_1>
-                  <Select_Region/>
-                </Col_1>
-                <Col_2>
                   <Select_Subregion/>
-                </Col_2>
+                </Col_0>
               </Colgroup_2>
               <Entity_List/>
             </Search>
@@ -238,26 +232,6 @@
         <group ref="Colgroup_2" faims_style="orientation">
           <label/>
           <group ref="Col_0" faims_style="even">
-            <label/>
-            <select1 ref="Select_State">
-              <label>{Select_State}</label>
-              <item>
-                <label>Options not loaded</label>
-                <value>Options not loaded</value>
-              </item>
-            </select1>
-          </group>
-          <group ref="Col_1" faims_style="even">
-            <label/>
-            <select1 ref="Select_Region">
-              <label>{Select_Region}</label>
-              <item>
-                <label>Options not loaded</label>
-                <value>Options not loaded</value>
-              </item>
-            </select1>
-          </group>
-          <group ref="Col_2" faims_style="even">
             <label/>
             <select1 ref="Select_Subregion">
               <label>{Select_Subregion}</label>

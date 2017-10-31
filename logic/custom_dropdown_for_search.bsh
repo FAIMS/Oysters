@@ -1,4 +1,6 @@
 /****************************** DROPDOWN FOR SEARCH *******************************/
+addOnEvent("General/Search/Select_Subregion", "click", "search()");
+addOnEvent("General/Search/Select_User", "click", "search()");
 void setDropdownByVocab(String vocabName, String ref) {
   List regionList = new ArrayList();
 
@@ -19,8 +21,8 @@ void setDropdownByVocab(String vocabName, String ref) {
 
 }
 addOnEvent("General/Search", "show", "populateHierarchicalDropDown(\"General/Search/Select_Subregion\", \"Trip Subregion\", true)");
-addOnEvent("General/Search", "show", "populateHierarchicalDropDown(\"General/Search/Select_Region\",\"Region\", true)");
-addOnEvent("General/Search", "show", "setDropdownByVocab(\"State\",\"General/Search/Select_State\")");
+//addOnEvent("General/Search", "show", "populateHierarchicalDropDown(\"General/Search/Select_Region\",\"Region\", true)");
+//addOnEvent("General/Search", "show", "setDropdownByVocab(\"State\",\"General/Search/Select_State\")");
 addOnEvent("General/Search", "show", "populateSelectUser()");
 void populateSelectUser(){
   String refSearchUsers = "General/Search/Select_User";
