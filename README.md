@@ -53,13 +53,13 @@ If you have any questions about the module, please contact the FAIMS team at **e
 </p>
 
 <p align="left">
- <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-4712.png" width="250"/>
+ <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174712.png" width="250"/>
   <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174721.png" width="250"/>
   <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174729.png" width="250"/>
 </p>
 
 <p align="left">
- <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174728.png" width="250"/>
+ <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174729.png" width="250"/>
   <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174747.png" width="250"/>
   <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174802.png" width="250"/>
 </p>
