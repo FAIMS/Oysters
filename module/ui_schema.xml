@@ -66,8 +66,6 @@
                   <Time/>
                 </Col_2>
               </Colgroup_1>
-              <State/>
-              <Region/>
               <Subregion/>
               <Colgroup_2>
                 <Col_1>
@@ -273,20 +271,6 @@
             </input>
           </group>
         </group>
-        <select1 faims_attribute_name="State" faims_attribute_type="vocab" ref="State">
-          <label>{State}</label>
-          <item>
-            <label>Options not loaded</label>
-            <value>Options not loaded</value>
-          </item>
-        </select1>
-        <select1 faims_attribute_name="Region" faims_attribute_type="vocab" ref="Region">
-          <label>{Region}</label>
-          <item>
-            <label>Options not loaded</label>
-            <value>Options not loaded</value>
-          </item>
-        </select1>
         <select1 faims_attribute_name="Trip Subregion" faims_attribute_type="vocab" ref="Subregion">
           <label>{Subregion}</label>
           <item>

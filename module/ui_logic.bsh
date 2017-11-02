@@ -284,8 +284,6 @@ REF_TO_TYPE.put("General/Search/Entity_List", "list");
 REF_TO_TYPE.put("Trip/Trip_data/Trip_author", "input");
 REF_TO_TYPE.put("Trip/Trip_data/Date", "input");
 REF_TO_TYPE.put("Trip/Trip_data/Time", "input");
-REF_TO_TYPE.put("Trip/Trip_data/State", "dropdown");
-REF_TO_TYPE.put("Trip/Trip_data/Region", "dropdown");
 REF_TO_TYPE.put("Trip/Trip_data/Subregion", "dropdown");
 REF_TO_TYPE.put("Trip/Trip_data/Latitude", "input");
 REF_TO_TYPE.put("Trip/Trip_data/Longitude", "input");
@@ -329,8 +327,6 @@ REF_TO_TYPE.put("Aggregate/Aggregation", "tab");
 DATA_REFS.add("Trip/Trip_data/Trip_author");
 DATA_REFS.add("Trip/Trip_data/Date");
 DATA_REFS.add("Trip/Trip_data/Time");
-DATA_REFS.add("Trip/Trip_data/State");
-DATA_REFS.add("Trip/Trip_data/Region");
 DATA_REFS.add("Trip/Trip_data/Subregion");
 DATA_REFS.add("Trip/Trip_data/Latitude");
 DATA_REFS.add("Trip/Trip_data/Longitude");
@@ -361,7 +357,6 @@ DATA_REFS.add("Aggregate/Aggregation/Aggregation_Photos");
 
 
 
-HIER_REFS.add("Trip/Trip_data/Region");
 HIER_REFS.add("Trip/Trip_data/Subregion");
 HIER_REFS.add("Aggregate/Shellfish/Primary_substrate");
 HIER_REFS.add("Aggregate/Shellfish/Surrounding_substrate");

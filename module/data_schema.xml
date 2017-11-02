@@ -17,67 +17,23 @@
       <formatString> $1</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
-        <term>{Sydney_region}
+        <term>{NSW}
+<description></description><term>{Sydney_region}
 <description></description><term>{Sydney_Harbour}
 <description></description></term><term>{Parramatta_River}
 <description></description></term><term>{Georges_River}
 <description></description></term><term>{Port_Hacking}
 <description></description></term><term>{Hawkesbury_River}
 <description></description></term><term>{Other}
-<description></description></term></term>
-        <term>{South_Coast}
+<description></description></term></term><term>{South_Coast}
 <description></description><term>{Merimbula_Eden}
 <description></description></term><term>{Jervis_Bay}
 <description></description></term><term>{Shoalhaven_River}
 <description></description></term><term>{Other}
-<description></description></term></term>
-        <term>{North_Coast}
-<description></description><term>{Port_Stephens}
+<description></description></term></term><term>{North_Coast}
+<description></description></term><term>{Port_Stephens}
 <description></description></term><term>{Port_Macquarie}
 <description></description></term><term>{Other}
-<description></description></term></term>
-      </lookup>
-    </property>
-    <property name="Trip author" type="measure">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="Time" type="measure">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-    </property>
-    <property name="State" type="vocab">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-      <lookup>
-        <term>{NSW}
-<description></description></term>
-        <term>{VIC}
-<description></description></term>
-        <term>{QLD}
-<description></description></term>
-        <term>{SA}
-<description></description></term>
-        <term>{WA}
-<description></description></term>
-        <term>{TAS}
-<description></description></term>
-        <term>{NT}
-<description></description></term>
-      </lookup>
-    </property>
-    <property name="Region" type="vocab">
-      <description></description>
-      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
-      <appendCharacterString> - </appendCharacterString>
-      <lookup>
-        <term>{NSW}
-<description></description><term>{Sydney_region}
-<description></description></term><term>{South_Coast}
-<description></description></term><term>{North_Coast}
 <description></description></term></term>
         <term>{VIC}
 <description></description><term>{Port_Phillip_Bay}
@@ -116,6 +72,16 @@
 <description></description></term><term>{Katherine}
 <description></description></term></term>
       </lookup>
+    </property>
+    <property name="Trip author" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Time" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
     </property>
     <property name="Latitude" type="measure">
       <description></description>
@@ -214,9 +180,9 @@
       <lookup>
         <term>{Vertical_or_near_vertical}
 <description></description></term>
-        <term>{Sloping__45_degrees}
+        <term>{Sloping_more_than_45_degrees}
 <description></description></term>
-        <term>{Sloping__45_degrees}
+        <term>{Sloping_less_than_45_degrees}
 <description></description></term>
         <term>{Flat}
 <description></description></term>
