@@ -42,20 +42,21 @@ If you have any questions about the module, please contact the FAIMS team at **e
 
 <p align="left">
   <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-173927.png" width="250"/>
+  <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174907.png" width="250"/>
   <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-173939.png" width="250"/>
-  <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174140.png" width="250"/>
+
 </p>
 
 <p align="left">
+ <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174140.png" width="250"/>
  <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174147.png" width="250"/>
   <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174302.png" width="250"/>
-  <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174311.png" width="250"/>
 </p>
 
 <p align="left">
+<img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174311.png" width="250"/>
  <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174712.png" width="250"/>
   <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174721.png" width="250"/>
-  <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174729.png" width="250"/>
 </p>
 
 <p align="left">
@@ -67,6 +68,6 @@ If you have any questions about the module, please contact the FAIMS team at **e
 <p align="left">
  <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174810.png" width="250"/>
   <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174827.png" width="250"/>
-  <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174907.png" width="250"/>
+  
 </p>
 
