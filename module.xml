@@ -27,23 +27,27 @@
         <Date f="readonly"/>
         <Time f="readonly"/>
       </cols>
-      <State>
-        <opts>
-          <opt>NSW</opt>
-          <opt>VIC</opt>
-          <opt>QLD</opt>
-          <opt>SA</opt>
-          <opt>WA</opt>
-          <opt>TAS</opt>
-          <opt>NT</opt>
-        </opts>
-      </State>
-      <Region>
+      <Subregion>
         <opts>
           <opt>NSW
-            <opt>Sydney region</opt>
-            <opt>South Coast</opt>
+            <opt>Sydney region
+             <opt>Sydney Harbour</opt>
+             <opt>Parramatta River</opt>
+             <opt>Georges River</opt>
+             <opt>Port Hacking</opt>
+             <opt>Hawkesbury River</opt>
+             <opt>Other</opt>
+            </opt>
+             <opt>South Coast
+             <opt>Merimbula/Eden</opt>
+             <opt>Jervis Bay</opt>
+             <opt>Shoalhaven River</opt>
+             <opt>Other</opt>
+            </opt>
             <opt>North Coast</opt>
+             <opt>Port Stephens</opt>
+             <opt>Port Macquarie</opt>
+             <opt>Other</opt>
           </opt>
           <opt>VIC
             <opt>Port Phillip Bay</opt>
@@ -80,29 +84,6 @@
             <opt>Darwin region</opt>
             <opt>Arnhem Land</opt>
             <opt>Katherine</opt>
-          </opt>
-        </opts>
-      </Region>
-      <Subregion>
-        <opts>
-          <opt>Sydney region
-            <opt>Sydney Harbour</opt>
-            <opt>Parramatta River</opt>
-            <opt>Georges River</opt>
-            <opt>Port Hacking</opt>
-            <opt>Hawkesbury River</opt>
-            <opt>Other</opt>
-          </opt>
-          <opt>South Coast
-            <opt>Merimbula/Eden</opt>
-            <opt>Jervis Bay</opt>
-            <opt>Shoalhaven River</opt>
-            <opt>Other</opt>
-          </opt>
-          <opt>North Coast
-            <opt>Port Stephens</opt>
-            <opt>Port Macquarie</opt>
-            <opt>Other</opt>
           </opt>
         </opts>
       </Subregion>
@@ -150,8 +131,8 @@
       <Shoreline_slope>
         <opts>
           <opt>Vertical or near-vertical</opt>
-          <opt>Sloping &lt;45 degrees</opt>
-          <opt>Sloping &gt;45 degrees</opt>
+          <opt>Sloping more than 45 degrees</opt>
+          <opt>Sloping less than 45 degrees</opt>
           <opt>Flat</opt>
         </opts>
       </Shoreline_slope>
