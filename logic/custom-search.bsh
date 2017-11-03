@@ -27,11 +27,15 @@ void search(){
                        "                from latestnondeletedaentvalue " +
                        "                where vocabid = '{subregionId}') " +
                        "        OR '{subregionId}' = 'null') " +
+                       " and   uuid in (SELECT uuid "+
+                       "                  FROM latestNonDeletedArchEntIdentifiers "+
+                       "                 WHERE measure LIKE '{term}'||'%'  "+
+                       "                )  "+
                        " ORDER BY response " +
                        " LIMIT ? " +
                        "OFFSET ? ";
 
-
+   searchQuery = replaceFirst(searchQuery, "{term}", term);
    searchQuery = replaceFirst(searchQuery, "{type}", type);
    searchQuery = replaceFirst(searchQuery, "{type}", type);
    searchQuery = replaceFirst(searchQuery, "{user}", user);

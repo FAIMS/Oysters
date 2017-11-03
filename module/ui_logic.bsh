@@ -1,5 +1,5 @@
 /*
- * GENERATED WITH FAIMS-TOOLS, SHA1: a167cae74048a5e5c4f3ea07c8b17acf5d4609ea
+ * GENERATED WITH FAIMS-TOOLS, SHA1: b57e2e6cf0a34f47165eae6e992ad3f89cc7d667
  */
 import android.util.Log;
 import android.os.Build.MODEL;
@@ -2405,7 +2405,7 @@ boolean populateMenu(
     default:
       Log.e(
           "populateMenu()",
-          "Can't populate vocab; type not recognised"
+          "Can't populate vocab; type '" + type + "' not recognised"
       );
       return false;
   }
@@ -3419,7 +3419,7 @@ void duplicateTrip(){
     onSave(uuid, newRecord) {
       setUuid(tabgroup, uuid);
 
-      timedFetchAll(getDuplicateRelnQuery(uuidOld), new FetchCallback(){
+      fetchAll(getDuplicateRelnQuery(uuidOld), new FetchCallback(){
         onFetch(result) {
           Log.e("Module", result.toString());
 
@@ -3440,7 +3440,7 @@ void duplicateTrip(){
   };
 
   String extraDupeAttributes = "";
-  timedFetchAll(getDuplicateAttributeQuery(uuidOld, extraDupeAttributes), new FetchCallback(){
+  fetchAll(getDuplicateAttributeQuery(uuidOld, extraDupeAttributes), new FetchCallback(){
     onFetch(result) {
       excludeAttributes = new ArrayList();
 
@@ -3467,7 +3467,7 @@ void duplicateAggregate(){
     onSave(uuid, newRecord) {
       setUuid(tabgroup, uuid);
 
-      timedFetchAll(getDuplicateRelnQuery(uuidOld), new FetchCallback(){
+      fetchAll(getDuplicateRelnQuery(uuidOld), new FetchCallback(){
         onFetch(result) {
           Log.e("Module", result.toString());
 
@@ -3488,7 +3488,7 @@ void duplicateAggregate(){
   };
 
   String extraDupeAttributes = "";
-  timedFetchAll(getDuplicateAttributeQuery(uuidOld, extraDupeAttributes), new FetchCallback(){
+  fetchAll(getDuplicateAttributeQuery(uuidOld, extraDupeAttributes), new FetchCallback(){
     onFetch(result) {
       excludeAttributes = new ArrayList();
 
@@ -4019,11 +4019,15 @@ void search(){
                        "                from latestnondeletedaentvalue " +
                        "                where vocabid = '{subregionId}') " +
                        "        OR '{subregionId}' = 'null') " +
+                       " and   uuid in (SELECT uuid "+
+                       "                  FROM latestNonDeletedArchEntIdentifiers "+
+                       "                 WHERE measure LIKE '{term}'||'%'  "+
+                       "                )  "+
                        " ORDER BY response " +
                        " LIMIT ? " +
                        "OFFSET ? ";
 
-
+   searchQuery = replaceFirst(searchQuery, "{term}", term);
    searchQuery = replaceFirst(searchQuery, "{type}", type);
    searchQuery = replaceFirst(searchQuery, "{type}", type);
    searchQuery = replaceFirst(searchQuery, "{user}", user);

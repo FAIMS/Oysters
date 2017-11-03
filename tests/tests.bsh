@@ -1,0 +1,11 @@
+// RUNNING SEARCH THROWS NO EXCEPTION
+{
+  Search() {
+    void run() {
+      search();
+    }
+    return this;
+  }
+
+  getStdout(Search());
+}
