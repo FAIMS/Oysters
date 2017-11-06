@@ -9,3 +9,14 @@
 
   getStdout(Search());
 }
+
+// Creating Shellfish_Aggregation fills in date and time fields
+{
+  executeOnEvent("Shellfish_Aggregation", "create");
+
+  String val1 = getFieldValue(REF_AGGREGATE_DATE);
+  String val2 = getFieldValue(REF_AGGREGATE_TIME);
+
+  assert(!isNull(val1));
+  assert(!isNull(val2));
+}

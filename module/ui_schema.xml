@@ -97,13 +97,13 @@
               <Animals_present/>
               <Shoreline_slope/>
             </Shoreline_attributes>
-            <Aggregate>
+            <Shellfish_Aggregation>
               <Add_Shellfish_Aggregation/>
               <Existing_Aggregations/>
-            </Aggregate>
+            </Shellfish_Aggregation>
           </Trip>
-          <Aggregate>
-            <Shellfish>
+          <Shellfish_Aggregation>
+            <Shellfish_Type>
               <Colgroup_1>
                 <Col_1>
                   <Date/>
@@ -120,15 +120,15 @@
               <Primary_substrate/>
               <Surrounding_substrate/>
               <Shellfish_status/>
-            </Shellfish>
-            <Aggregation>
+            </Shellfish_Type>
+            <Aggregation_Attributes>
               <Distance_to_water_in_m/>
               <Size_of_aggregation/>
               <Density_of_aggregation/>
               <Aggregation_Photos/>
               <Aggregation_Photos_Button_1/>
-            </Aggregation>
-          </Aggregate>
+            </Aggregation_Attributes>
+          </Shellfish_Aggregation>
         </faims>
       </instance>
     </model>
@@ -362,8 +362,8 @@
           </item>
         </select1>
       </group>
-      <group ref="Aggregate" faims_scrollable="false">
-        <label>{Aggregate}</label>
+      <group ref="Shellfish_Aggregation" faims_scrollable="false">
+        <label>{Shellfish_Aggregation}</label>
         <trigger ref="Add_Shellfish_Aggregation" faims_annotation="false" faims_certainty="false">
           <label>{Add_Shellfish_Aggregation}</label>
         </trigger>
@@ -376,10 +376,10 @@
         </select1>
       </group>
     </group>
-    <group ref="Aggregate" faims_archent_type="Aggregate">
-      <label>{Aggregate}</label>
-      <group ref="Shellfish">
-        <label>{Shellfish}</label>
+    <group ref="Shellfish_Aggregation" faims_archent_type="Shellfish Aggregation">
+      <label>{Shellfish_Aggregation}</label>
+      <group ref="Shellfish_Type">
+        <label>{Shellfish_Type}</label>
         <group ref="Colgroup_1" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
@@ -395,7 +395,7 @@
             </input>
           </group>
         </group>
-        <input faims_attribute_name="Aggregate Subregion" faims_attribute_type="measure" ref="Subregion" faims_read_only="true" faims_annotation="false" faims_certainty="false">
+        <input faims_attribute_name="Shellfish Aggregation Subregion" faims_attribute_type="measure" ref="Subregion" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Subregion}</label>
         </input>
         <select1 faims_attribute_name="Shellfish type" faims_attribute_type="vocab" ref="Shellfish_type">
@@ -444,8 +444,8 @@
           </item>
         </select1>
       </group>
-      <group ref="Aggregation">
-        <label>{Aggregation}</label>
+      <group ref="Aggregation_Attributes">
+        <label>{Aggregation_Attributes}</label>
         <select1 appearance="full" faims_attribute_name="Distance to water in m" faims_attribute_type="vocab" ref="Distance_to_water_in_m">
           <label>{Distance_to_water__m_}</label>
           <item>

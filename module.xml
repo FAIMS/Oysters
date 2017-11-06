@@ -137,15 +137,15 @@
         </opts>
       </Shoreline_slope>
     </Shoreline_attributes>
-    <Aggregate f="noscroll">
-      <Add_Shellfish_Aggregation t="button" f="nocertainty noannotation" lc="Aggregate"/>
-      <Existing_Aggregations t="list" f="nocertainty noannotation" ec="Aggregate"/>
-    </Aggregate>
+    <Shellfish_Aggregation f="noscroll">
+      <Add_Shellfish_Aggregation t="button" f="nocertainty noannotation" lc="Shellfish_Aggregation"/>
+      <Existing_Aggregations t="list" f="nocertainty noannotation" ec="Shellfish_Aggregation"/>
+    </Shellfish_Aggregation>
   </Trip>
 
-  <Aggregate>
+  <Shellfish_Aggregation>
     <fmt>{{Date}} {{Subregion}} {{Shellfish_species}}</fmt>
-    <Shellfish>
+    <Shellfish_Type>
       <cols>
         <Date f="readonly"/>
         <Time f="readonly"/>
@@ -373,8 +373,8 @@
           </opt>
         </opts>
       </Shellfish_status>
-    </Shellfish>
-    <Aggregation>
+    </Shellfish_Type>
+    <Aggregation_Attributes>
       <Distance_to_water_in_m t="radio">
         Distance to water (m)
         <desc>How far out of the water is the aggregation? Report in metres.</desc>
@@ -411,8 +411,8 @@
       <Aggregation_Photos t="camera">
         <desc>Take up to 5 photos of the aggregation from different positions. Keep your device at the same distance from the aggregation each time. Note this distance (in paces or metres) in the annotation box.</desc>
       </Aggregation_Photos>
-    </Aggregation>
-  </Aggregate>
+    </Aggregation_Attributes>
+  </Shellfish_Aggregation>
   <logic><![CDATA[
     <!--@SOURCE: logic/date_time.bsh-->
     <!--@SOURCE: logic/custom_dropdown_for_search.bsh-->

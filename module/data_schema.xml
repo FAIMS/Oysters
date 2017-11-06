@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <dataSchema>
-  <RelationshipElement name="Trip - Aggregate" type="hierarchical">
+  <RelationshipElement name="Trip - Shellfish Aggregation" type="hierarchical">
     <description>A 1-to-n relationship between the parent and its children, respectively.</description>
     <parent>Parent Of</parent>
     <child>Child Of</child>
@@ -189,14 +189,14 @@
       </lookup>
     </property>
   </ArchaeologicalElement>
-  <ArchaeologicalElement name="Aggregate">
+  <ArchaeologicalElement name="Shellfish Aggregation">
     <description></description>
     <property name="Date" type="measure" isIdentifier="true">
       <description></description>
       <formatString>$2</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
-    <property name="Aggregate Subregion" type="measure" isIdentifier="true">
+    <property name="Shellfish Aggregation Subregion" type="measure" isIdentifier="true">
       <description></description>
       <formatString> $2</formatString>
       <appendCharacterString> - </appendCharacterString>
