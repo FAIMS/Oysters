@@ -1,5 +1,5 @@
 # About this module:
-This module was created for the **AWARE: Australian Waterways Alliance for Resilient Ecosystems project**, based in Sydney, Australia. The module has been designed to collect wide-ranging data about the existing remnant shellfish reefs in Australia. The app has been specifically designed to engage the public with their local environment, allowing non-specialists users to record basic information about the types of habitat and existing shellfish aggregations found at their local shorelines.
+This module was created for the **Oyster Monitoring Project**, based in Sydney, Australia. The module has been designed to collect wide-ranging data about the existing remnant shellfish reefs in Australia. The app has been specifically designed to engage the public with their local environment, allowing non-specialists users to record basic information about the types of habitat and existing shellfish aggregations found at their local shorelines.
 
 ## Authorship:
 This module was co-developed by Elisa Bone at Ashore Consulting, Sydney and Adela Sobotkova and Petra Janouchova at the FAIMS Project, Department of Ancient History, Macquarie University.
@@ -21,7 +21,7 @@ This module is licensed under an international Creative Commons Attribution 4.0 
 The module can be downloaded / cloned from this GitHub repository.  
 
 ## This module contains the following FAIMS features:
-* user sign-up (users can create their own accounts)
+* user login protected with password
 * controlled vocabularies (dropdowns and checkboxes)
 * photo capture from device camera
 * coordinates from internal GPS
@@ -34,7 +34,7 @@ The module can be downloaded / cloned from this GitHub repository.
 * field-school or high-school trainings
 
 ## Contact info:
-For more details about the **AWARE Project** please, contact Elisa Bone at ashoreconsulting@gmail.com.
+For more details about the **Oyster Monitoring Project** please, contact Elisa Bone at ashoreconsulting@gmail.com.
 
 If you have any questions about the module, please contact the FAIMS team at **enquiries@fedarch.org** and we will get back to you within one business day.
 
