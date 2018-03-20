@@ -31,23 +31,24 @@
         <opts>
           <opt>NSW
             <opt>Sydney region
-             <opt>Sydney Harbour</opt>
-             <opt>Parramatta River</opt>
-             <opt>Georges River</opt>
-             <opt>Port Hacking</opt>
-             <opt>Hawkesbury River</opt>
-             <opt>Other</opt>
+              <opt>Sydney Harbour</opt>
+              <opt>Parramatta River</opt>
+              <opt>Georges River</opt>
+              <opt>Port Hacking</opt>
+              <opt>Hawkesbury River</opt>
+              <opt>Other</opt>
             </opt>
-             <opt>South Coast
-             <opt>Merimbula/Eden</opt>
-             <opt>Jervis Bay</opt>
-             <opt>Shoalhaven River</opt>
-             <opt>Other</opt>
+            <opt>South Coast
+              <opt>Merimbula/Eden</opt>
+              <opt>Jervis Bay</opt>
+              <opt>Shoalhaven River</opt>
+              <opt>Other</opt>
             </opt>
-            <opt>North Coast</opt>
-             <opt>Port Stephens</opt>
-             <opt>Port Macquarie</opt>
-             <opt>Other</opt>
+            <opt>North Coast
+              <opt>Port Stephens</opt>
+              <opt>Port Macquarie</opt>
+              <opt>Other</opt>
+            </opt>
           </opt>
           <opt>VIC
             <opt>Port Phillip Bay</opt>
