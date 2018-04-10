@@ -18,59 +18,60 @@
       <appendCharacterString> - </appendCharacterString>
       <lookup>
         <term>{NSW}
-<description></description><term>{Sydney_region}
-<description></description><term>{Sydney_Harbour}
-<description></description></term><term>{Parramatta_River}
-<description></description></term><term>{Georges_River}
-<description></description></term><term>{Port_Hacking}
-<description></description></term><term>{Hawkesbury_River}
-<description></description></term><term>{Other}
-<description></description></term></term><term>{South_Coast}
-<description></description><term>{Merimbula_Eden}
-<description></description></term><term>{Jervis_Bay}
-<description></description></term><term>{Shoalhaven_River}
-<description></description></term><term>{Other}
-<description></description></term></term><term>{North_Coast}
-<description></description><term>{Port_Stephens}
-<description></description></term><term>{Port_Macquarie}
-<description></description></term><term>{Other}
-<description></description></term></term></term>
+<description> </description><term>{Sydney_region}
+<description> </description><term>{Sydney_Harbour}
+<description> </description></term><term>{Parramatta_River}
+<description> </description></term><term>{Georges_River}
+<description> </description></term><term>{Port_Hacking}
+<description> </description></term><term>{Hawkesbury_River}
+<description> </description></term><term>{Other}
+<description> </description></term></term><term>{South_Coast}
+<description> </description><term>{Merimbula_Eden}
+<description> </description></term><term>{Jervis_Bay}
+<description> </description></term><term>{Shoalhaven_River}
+<description> </description></term><term>{Other}
+<description> </description></term></term><term>{North_Coast}
+<description> </description><term>{Byron_Bay}
+<description> </description></term><term>{Port_Stephens}
+<description> </description></term><term>{Port_Macquarie}
+<description> </description></term><term>{Other}
+<description> </description></term></term></term>
         <term>{VIC}
-<description></description><term>{Port_Phillip_Bay}
-<description></description></term><term>{Westernport_Bay}
-<description></description></term><term>{Western}
-<description></description></term><term>{Eastern}
-<description></description></term></term>
+<description> </description><term>{Port_Phillip_Bay}
+<description> </description></term><term>{Westernport_Bay}
+<description> </description></term><term>{Western}
+<description> </description></term><term>{Eastern}
+<description> </description></term></term>
         <term>{QLD}
-<description></description><term>{South_East}
-<description></description></term><term>{Central}
-<description></description></term><term>{Far_North}
-<description></description></term></term>
+<description> </description><term>{South_East}
+<description> </description></term><term>{Central}
+<description> </description></term><term>{Far_North}
+<description> </description></term></term>
         <term>{SA}
-<description></description><term>{Gulf_St_Vincent}
-<description></description></term><term>{Spencer_Gulf}
-<description></description></term><term>{Eastern}
-<description></description></term><term>{Western}
-<description></description></term></term>
+<description> </description><term>{Gulf_St_Vincent}
+<description> </description></term><term>{Spencer_Gulf}
+<description> </description></term><term>{Eastern}
+<description> </description></term><term>{Western}
+<description> </description></term></term>
         <term>{WA}
-<description></description><term>{Perth_region}
-<description></description></term><term>{South_East}
-<description></description></term><term>{South_West}
-<description></description></term><term>{Coral_Coast}
-<description></description></term><term>{Pilbara}
-<description></description></term><term>{Kimberley}
-<description></description></term></term>
+<description> </description><term>{Perth_region}
+<description> </description></term><term>{South_East}
+<description> </description></term><term>{South_West}
+<description> </description></term><term>{Coral_Coast}
+<description> </description></term><term>{Pilbara}
+<description> </description></term><term>{Kimberley}
+<description> </description></term></term>
         <term>{TAS}
-<description></description><term>{Hobart_region}
-<description></description></term><term>{East}
-<description></description></term><term>{West}
-<description></description></term><term>{North}
-<description></description></term></term>
+<description> </description><term>{Hobart_region}
+<description> </description></term><term>{East}
+<description> </description></term><term>{West}
+<description> </description></term><term>{North}
+<description> </description></term></term>
         <term>{NT}
-<description></description><term>{Darwin_region}
-<description></description></term><term>{Arnhem_Land}
-<description></description></term><term>{Katherine}
-<description></description></term></term>
+<description> </description><term>{Darwin_region}
+<description> </description></term><term>{Arnhem_Land}
+<description> </description></term><term>{Katherine}
+<description> </description></term></term>
       </lookup>
     </property>
     <property name="Trip author" type="measure">
@@ -114,15 +115,15 @@
       <appendCharacterString> - </appendCharacterString>
       <lookup>
         <term>{Mudflat}
-<description></description></term>
+<description> </description></term>
         <term>{Sandy_beach}
-<description></description></term>
+<description> </description></term>
         <term>{Rocky_shore}
-<description></description></term>
+<description> </description></term>
         <term>{Saltmarsh}
-<description></description></term>
+<description> </description></term>
         <term>{Mangroves}
-<description></description></term>
+<description> </description></term>
       </lookup>
     </property>
     <property name="Artificial habitat types" type="vocab">
@@ -131,21 +132,53 @@
       <appendCharacterString> - </appendCharacterString>
       <lookup>
         <term>{Concrete}
-<description></description></term>
+<description> </description></term>
         <term>{Seawall}
-<description></description></term>
+<description> </description></term>
         <term>{Riprap__large_rocks_}
-<description></description></term>
+<description> </description></term>
         <term>{Gravel}
-<description></description></term>
+<description> </description></term>
         <term>{Wooden_pier}
-<description></description></term>
+<description> </description></term>
       </lookup>
     </property>
     <property name="Dominant habitat" type="measure">
       <description>Note the habitat type that is dominant (takes up the most area) at this location</description>
       <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
       <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Adjacent land use" type="vocab">
+      <description>Examine the land uses 50m back from the shore (i.e. landward of the sand/dunes/mudflat/mangroves/marsh) for 50m either side of your observation point and check all that apply</description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Bushland_grassland}
+<description> </description></term>
+        <term>{Sporting_park_field}
+<description> </description></term>
+        <term>{Residential}
+<description> </description></term>
+        <term>{Commercial}
+<description> </description></term>
+        <term>{Industrial}
+<description> </description></term>
+        <term>{Road_asphalt}
+<description> </description></term>
+      </lookup>
+    </property>
+    <property name="Wastewater outflows" type="vocab">
+      <description>Are there any sewage or stormwater outflows within 100m? Add a photo of any pipes you see.</description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Yes___one_}
+<description> </description></term>
+        <term>{Yes__one_}
+<description> </description></term>
+        <term>{No}
+<description> </description></term>
+      </lookup>
     </property>
     <property name="Habitat photo" type="file" file="true" thumbnail="true">
       <description>Take a photo of the dominant habitat type</description>
@@ -158,19 +191,19 @@
       <appendCharacterString> - </appendCharacterString>
       <lookup>
         <term>{Attached_shellfish__oysters__mussels_}
-<description></description></term>
+<description> </description></term>
         <term>{Other_shellfish__clams__pipis_}
-<description></description></term>
+<description> </description></term>
         <term>{Seabirds}
-<description></description></term>
+<description> </description></term>
         <term>{Shorebirds__waders_}
-<description></description></term>
+<description> </description></term>
         <term>{Fish}
-<description></description></term>
+<description> </description></term>
         <term>{Crabs}
-<description></description></term>
+<description> </description></term>
         <term>{Worms}
-<description></description></term>
+<description> </description></term>
       </lookup>
     </property>
     <property name="Shoreline slope" type="vocab">
@@ -179,13 +212,13 @@
       <appendCharacterString> - </appendCharacterString>
       <lookup>
         <term>{Vertical_or_near_vertical}
-<description></description></term>
+<description> </description></term>
         <term>{Sloping_more_than_45_degrees}
-<description></description></term>
+<description> </description></term>
         <term>{Sloping_less_than_45_degrees}
-<description></description></term>
+<description> </description></term>
         <term>{Flat}
-<description></description></term>
+<description> </description></term>
       </lookup>
     </property>
   </ArchaeologicalElement>
@@ -202,28 +235,37 @@
       <appendCharacterString> - </appendCharacterString>
     </property>
     <property name="Shellfish species" type="vocab" isIdentifier="true">
-      <description>Choose your species from the following list. Species can be hard to tell apart so please also upload a photo for validation</description>
+      <description>
+          
+Choose your species from the following list. Species can be hard to
+tell apart so please also upload a photo for validation. For more
+information:
+&lt;a href="http://www.shellfishrestoration.org.au"&gt;
+  www.shellfishrestoration.org.au
+&lt;/a&gt;
+          
+        </description>
       <formatString> $1</formatString>
       <appendCharacterString> - </appendCharacterString>
       <lookup>
         <term pictureURL="files/data/gallery/SRO_AusMuseum.jpg">{Sydney_Rock_Oyster__Saccostrea_glomerata_}
-<description></description></term>
+<description> </description></term>
         <term pictureURL="files/data/gallery/Crassostrea_gigas_wikipedia.jpg">{Pacific_Oyster__Crassostrea_gigas_}
-<description></description></term>
+<description> </description></term>
         <term pictureURL="files/data/gallery/blue_mussel_diggles.jpg">{Blue_Mussel__Mytilus_edulis_}
-<description></description></term>
+<description> </description></term>
         <term pictureURL="files/data/gallery/o_angasi_alleway.jpg">{Mud_Oyster__Ostrea_angasi_}
-<description></description></term>
+<description> </description></term>
         <term pictureURL="files/data/gallery/hairy_mussel.jpg">{Hairy_Mussel__Trichomya_hirsuta_}
-<description></description></term>
+<description> </description></term>
         <term pictureURL="files/data/gallery/leaf_oyster.jpg">{Leaf_Oyster__Isognomon_ephippium_}
-<description></description></term>
+<description> </description></term>
         <term pictureURL="files/data/gallery/p_albina.jpg">{Pearl_Oyster__Pinctada_albina_sugillata_}
-<description></description></term>
+<description> </description></term>
         <term pictureURL="files/data/gallery/Saccostrea_cucullata.jpg">{Coral_Rock_Oyster__Saccostrea_culcullata_}
-<description></description></term>
+<description> </description></term>
         <term pictureURL="files/data/gallery/d_diggles_s_echinata.jpg">{Blacklip_Oyster__Saccostrea_echinata_}
-<description></description></term>
+<description> </description></term>
       </lookup>
     </property>
     <property name="Time" type="measure">
@@ -237,9 +279,9 @@
       <appendCharacterString> - </appendCharacterString>
       <lookup>
         <term>{Oysters}
-<description></description></term>
+<description> </description></term>
         <term>{Mussels}
-<description></description></term>
+<description> </description></term>
       </lookup>
     </property>
     <property name="Shellfish Photo" type="file" file="true" thumbnail="true">
@@ -393,13 +435,13 @@
       <appendCharacterString> - </appendCharacterString>
       <lookup>
         <term>{Under_water}
-<description></description></term>
+<description> </description></term>
         <term>{_1m}
-<description></description></term>
+<description> </description></term>
         <term>{1_5m}
-<description></description></term>
+<description> </description></term>
         <term>{_5m}
-<description></description></term>
+<description> </description></term>
       </lookup>
     </property>
     <property name="Size of aggregation" type="vocab">
@@ -408,11 +450,11 @@
       <appendCharacterString> - </appendCharacterString>
       <lookup>
         <term pictureURL="files/data/gallery/oyster_small_agg.jpg">{Small___10_individuals_}
-<description></description></term>
+<description> </description></term>
         <term pictureURL="files/data/gallery/oyster_agg_1m.jpg">{Medium__10_50_}
-<description></description></term>
+<description> </description></term>
         <term pictureURL="files/data/gallery/large_aggregation.jpg">{Large___50_}
-<description></description></term>
+<description> </description></term>
       </lookup>
     </property>
     <property name="Density of aggregation" type="vocab">
@@ -421,13 +463,13 @@
       <appendCharacterString> - </appendCharacterString>
       <lookup>
         <term>{Sparse___3_}
-<description></description></term>
+<description> </description></term>
         <term>{Moderately_Sparse__3_5_}
-<description></description></term>
+<description> </description></term>
         <term>{Dense__6_9_}
-<description></description></term>
+<description> </description></term>
         <term>{Very_dense___10_}
-<description></description></term>
+<description> </description></term>
       </lookup>
     </property>
     <property name="Aggregation Photos" type="file" file="true" thumbnail="true">

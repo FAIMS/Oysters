@@ -1,5 +1,4 @@
 <?xml version="1.0" ?>
-<!--TODO: Search Logic, info box content, vocab, date and time logic -->
 <!--@POSTPROC: ./proc/post.sh-->
 <module>
   <Login f="nodata">
@@ -45,6 +44,7 @@
               <opt>Other</opt>
             </opt>
             <opt>North Coast
+              <opt>Byron Bay</opt>
               <opt>Port Stephens</opt>
               <opt>Port Macquarie</opt>
               <opt>Other</opt>
@@ -88,6 +88,11 @@
           </opt>
         </opts>
       </Subregion>
+      <GPS_Guide t="webview" f="nolabel">
+        <markdown>
+Pick a location at which to observe the shoreline
+        </markdown>
+      </GPS_Guide>
       <gps/>
     </Trip_data>
     <Shoreline_attributes>
@@ -114,6 +119,25 @@
       <Dominant_habitat f="notnull">
         <desc>Note the habitat type that is dominant (takes up the most area) at this location</desc>
       </Dominant_habitat>
+      <Adjacent_land_use t="checkbox" f="notnull">
+        <desc>Examine the land uses 50m back from the shore (i.e. landward of the sand/dunes/mudflat/mangroves/marsh) for 50m either side of your observation point and check all that apply</desc>
+        <opts>
+          <opt>Bushland/grassland</opt>
+          <opt>Sporting park/field</opt>
+          <opt>Residential</opt>
+          <opt>Commercial</opt>
+          <opt>Industrial</opt>
+          <opt>Road/asphalt</opt>
+        </opts>
+      </Adjacent_land_use>
+      <Wastewater_outflows t="radio" f="notnull">
+        <desc>Are there any sewage or stormwater outflows within 100m? Add a photo of any pipes you see.</desc>
+        <opts>
+          <opt>Yes (&gt;one)</opt>
+          <opt>Yes (one)</opt>
+          <opt>No</opt>
+        </opts>
+      </Wastewater_outflows>
       <Habitat_photo t="camera" f="notnull">
         <desc>Take a photo of the dominant habitat type</desc>
       </Habitat_photo>
@@ -137,9 +161,20 @@
           <opt>Flat</opt>
         </opts>
       </Shoreline_slope>
+      <Check_for_Missing_Data t="button"/>
     </Shoreline_attributes>
     <Shellfish_Aggregation f="noscroll">
+      <Add_Shellfish_Aggregation_Guide f="nolabel" t="webview">
+        <markdown>
+Add a new kind of aggregate to the current trip/shoreline
+        </markdown>
+      </Add_Shellfish_Aggregation_Guide>
       <Add_Shellfish_Aggregation t="button" f="nocertainty noannotation" lc="Shellfish_Aggregation"/>
+      <Existing_Aggregations_Guide f="nolabel" t="webview">
+        <markdown>
+The list below will show the aggregates documented previously at this location
+        </markdown>
+      </Existing_Aggregations_Guide>
       <Existing_Aggregations t="list" f="nocertainty noannotation" ec="Shellfish_Aggregation"/>
     </Shellfish_Aggregation>
   </Trip>
@@ -159,8 +194,17 @@
           <opt>Mussels</opt>
         </opts>
       </Shellfish_type>
-      <Shellfish_species t="picture">
-        <desc>Choose your species from the following list. Species can be hard to tell apart so please also upload a photo for validation</desc>
+      <Shellfish_species t="picture" f="htmldesc">
+        <desc>
+          <![CDATA[
+Choose your species from the following list. Species can be hard to
+tell apart so please also upload a photo for validation. For more
+information:
+<a href="http://www.shellfishrestoration.org.au">
+  www.shellfishrestoration.org.au
+</a>
+          ]]>
+        </desc>
         <opts>
           <opt p="gallery/SRO_AusMuseum.jpg">
             Sydney Rock Oyster (Saccostrea glomerata)
@@ -418,5 +462,6 @@
     <!--@SOURCE: logic/date_time.bsh-->
     <!--@SOURCE: logic/custom_dropdown_for_search.bsh-->
     <!--@SOURCE: logic/custom-search.bsh-->
+    <!--@SOURCE: logic/check-for-missing-data-button.bsh-->
   ]]></logic>
 </module>

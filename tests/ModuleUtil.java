@@ -168,6 +168,15 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: button
+        Ref:  Trip/Shoreline_attributes/Check_for_Missing_Data
+     */
+    public static View get_Trip_Shorelineattributes_CheckforMissingData(Solo solo) {
+        String ref = "Trip/Shoreline_attributes/Check_for_Missing_Data";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: button
         Ref:  Trip/Shoreline_attributes/Habitat_photo_Button_1
      */
     public static View get_Trip_Shorelineattributes_HabitatphotoButton1(Solo solo) {
@@ -208,6 +217,15 @@ public class ModuleUtil extends ModuleHelper {
      */
     public static View get_Trip_Shorelineattributes_Habitatphoto(Solo solo) {
         String ref = "Trip/Shoreline_attributes/Habitat_photo";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: checkbox
+        Ref:  Trip/Shoreline_attributes/Adjacent_land_use
+     */
+    public static View get_Trip_Shorelineattributes_Adjacentlanduse(Solo solo) {
+        String ref = "Trip/Shoreline_attributes/Adjacent_land_use";
         return (android.view.View) solo.getView((Object) ref);
     }
 
@@ -473,11 +491,47 @@ public class ModuleUtil extends ModuleHelper {
     }
 
     /*
+        Type: radio
+        Ref:  Trip/Shoreline_attributes/Wastewater_outflows
+     */
+    public static View get_Trip_Shorelineattributes_Wastewateroutflows(Solo solo) {
+        String ref = "Trip/Shoreline_attributes/Wastewater_outflows";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
         Type: webview
         Ref:  Login/User_login/Signup_Guide_1
      */
     public static View get_Login_Userlogin_SignupGuide1(Solo solo) {
         String ref = "Login/User_login/Signup_Guide_1";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: webview
+        Ref:  Trip/Shellfish_Aggregation/Add_Shellfish_Aggregation_Guide
+     */
+    public static View get_Trip_ShellfishAggregation_AddShellfishAggregationGuide(Solo solo) {
+        String ref = "Trip/Shellfish_Aggregation/Add_Shellfish_Aggregation_Guide";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: webview
+        Ref:  Trip/Shellfish_Aggregation/Existing_Aggregations_Guide
+     */
+    public static View get_Trip_ShellfishAggregation_ExistingAggregationsGuide(Solo solo) {
+        String ref = "Trip/Shellfish_Aggregation/Existing_Aggregations_Guide";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: webview
+        Ref:  Trip/Trip_data/GPS_Guide
+     */
+    public static View get_Trip_Tripdata_GPSGuide(Solo solo) {
+        String ref = "Trip/Trip_data/GPS_Guide";
         return (android.view.View) solo.getView((Object) ref);
     }
 }

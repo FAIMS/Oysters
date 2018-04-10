@@ -1,5 +1,5 @@
 /*
- * GENERATED WITH FAIMS-TOOLS, SHA1: b57e2e6cf0a34f47165eae6e992ad3f89cc7d667
+ * GENERATED WITH FAIMS-TOOLS, SHA1: 395e6197e31d52a07d17153bb2ece8e0435d7ed6
  */
 import android.util.Log;
 import android.os.Build.MODEL;
@@ -7,6 +7,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 // Beanshell won't let me write "\0".
 final String SEP = Character.toString ((char) 0);
+
+final String MSG_LOADING = "Loading...";
 
 final String USER_MENU_PATH = "Login/User_login/Users";
 userMenuPath = USER_MENU_PATH; // Depricated. Use `USER_MENU_PATH` instead
@@ -70,6 +72,43 @@ String listToSqlString(List l){
   sqlString += ")";
 
   return sqlString;
+}
+
+// Run a list of queries one-after-the-other. The next query starts executing
+// once the previous finishes.
+//
+// `callbacks` is a list of `FetchCallback` objects corresponding to each query
+// in `queries`. Although `callbacks` cannot be null, any of it elements can.
+void sequentialFetchAll(List queries, List callbacks) {
+  if (queries == null || callbacks == null)
+    throw IllegalArgumentException("Arguments cannot be null");
+  if (queries.size() != callbacks.size())
+    throw IllegalArgumentException("Argument lists must have the same length");
+
+  if (queries.size() == 0)
+    return;
+
+  String        queriesHead   = queries  .get(0);
+  FetchCallback callbacksHead = callbacks.get(0);
+
+  List queriesTail   = queries  .subList(1, queries  .size());
+  List callbacksTail = callbacks.subList(1, callbacks.size());
+
+  FetchCallback executeTail = new FetchCallback() {
+    onFetch(result) {
+      if (callbacksHead != null)
+        callbacksHead.onFetch(result);
+
+      sequentialFetchAll(queriesTail, callbacksTail);
+    }
+
+    onError(String message) {
+      if (callbacksHead != null)
+        callbacksHead.onError(message);
+    }
+  };
+
+  fetchAll(queriesHead, executeTail);
 }
 
 /******************************************************************************/
@@ -136,7 +175,7 @@ String escape(String s) {
   return translate(s, dict);
 }
 
-Map MEMOISED_FILTERED_BY_REGEX = new HashMap();
+Map MEMOISED_FILTERED_BY_REGEX = new LinkedHashMap();
 
 List filterListByRegex(List unfiltered, String regex, boolean forceUpdate) {
   // Return a copy of the memoised result if possible. It's important to return
@@ -152,7 +191,7 @@ List filterListByRegex(List unfiltered, String regex, boolean forceUpdate) {
 
   // Compute the filtered list
   List filteredList;
-  Set  filteredSet = new HashSet();
+  Set  filteredSet = new LinkedHashSet();
   for (element : unfiltered)
     if (element.matches(regex))
       filteredSet.add(element);
@@ -256,7 +295,7 @@ String  PREVIOUSLY_DISPLAYED_TAB_GROUP = "";
 String  CURRENTLY_DISPLAYED_TAB_GROUP  = "";
 String  PREVIOUSLY_DISPLAYED_TAB       = "";
 String  CURRENTLY_DISPLAYED_TAB        = "";
-Map     REF_TO_TYPE                    = new HashMap();
+Map     REF_TO_TYPE                    = new LinkedHashMap();
 HashSet DATA_REFS                      = new HashSet();
 HashSet NO_UI_REFS                     = new HashSet();
 HashSet HIER_REFS                      = new HashSet();
@@ -285,6 +324,7 @@ REF_TO_TYPE.put("Trip/Trip_data/Trip_author", "input");
 REF_TO_TYPE.put("Trip/Trip_data/Date", "input");
 REF_TO_TYPE.put("Trip/Trip_data/Time", "input");
 REF_TO_TYPE.put("Trip/Trip_data/Subregion", "dropdown");
+REF_TO_TYPE.put("Trip/Trip_data/GPS_Guide", "webview");
 REF_TO_TYPE.put("Trip/Trip_data/Latitude", "input");
 REF_TO_TYPE.put("Trip/Trip_data/Longitude", "input");
 REF_TO_TYPE.put("Trip/Trip_data/Northing", "input");
@@ -294,11 +334,16 @@ REF_TO_TYPE.put("Trip/Trip_data/Take_From_GPS_1", "button");
 REF_TO_TYPE.put("Trip/Shoreline_attributes/Natural_habitat_types", "checkbox");
 REF_TO_TYPE.put("Trip/Shoreline_attributes/Artificial_habitat_types", "checkbox");
 REF_TO_TYPE.put("Trip/Shoreline_attributes/Dominant_habitat", "input");
+REF_TO_TYPE.put("Trip/Shoreline_attributes/Adjacent_land_use", "checkbox");
+REF_TO_TYPE.put("Trip/Shoreline_attributes/Wastewater_outflows", "radio");
 REF_TO_TYPE.put("Trip/Shoreline_attributes/Habitat_photo", "camera");
 REF_TO_TYPE.put("Trip/Shoreline_attributes/Habitat_photo_Button_1", "button");
 REF_TO_TYPE.put("Trip/Shoreline_attributes/Animals_present", "checkbox");
 REF_TO_TYPE.put("Trip/Shoreline_attributes/Shoreline_slope", "dropdown");
+REF_TO_TYPE.put("Trip/Shoreline_attributes/Check_for_Missing_Data", "button");
+REF_TO_TYPE.put("Trip/Shellfish_Aggregation/Add_Shellfish_Aggregation_Guide", "webview");
 REF_TO_TYPE.put("Trip/Shellfish_Aggregation/Add_Shellfish_Aggregation", "button");
+REF_TO_TYPE.put("Trip/Shellfish_Aggregation/Existing_Aggregations_Guide", "webview");
 REF_TO_TYPE.put("Trip/Shellfish_Aggregation/Existing_Aggregations", "list");
 REF_TO_TYPE.put("Shellfish_Aggregation/Shellfish_Type/Date", "input");
 REF_TO_TYPE.put("Shellfish_Aggregation/Shellfish_Type/Time", "input");
@@ -336,6 +381,8 @@ DATA_REFS.add("Trip/Trip_data/Accuracy");
 DATA_REFS.add("Trip/Shoreline_attributes/Natural_habitat_types");
 DATA_REFS.add("Trip/Shoreline_attributes/Artificial_habitat_types");
 DATA_REFS.add("Trip/Shoreline_attributes/Dominant_habitat");
+DATA_REFS.add("Trip/Shoreline_attributes/Adjacent_land_use");
+DATA_REFS.add("Trip/Shoreline_attributes/Wastewater_outflows");
 DATA_REFS.add("Trip/Shoreline_attributes/Habitat_photo");
 DATA_REFS.add("Trip/Shoreline_attributes/Animals_present");
 DATA_REFS.add("Trip/Shoreline_attributes/Shoreline_slope");
@@ -694,6 +741,13 @@ List getRefsMatching(String pattern) {
   return filterListByRegex(getRefs(), regex);
 }
 
+String getRefMatching(String pattern) {
+  List matches = getRefsMatching(pattern);
+  if (matches.size() == 0)
+    return "";
+  return matches.get(0);
+}
+
 /******************************************************************************/
 /*                            BINDING ACCUMULATOR                             */
 /*                                                                            */
@@ -706,7 +760,8 @@ List getRefsMatching(String pattern) {
 /*         events more consistent.                                            */
 /*   - "copy" --- Triggered as a record is duplicated, immediately before it  */
 /*         is first saved.                                                    */
-/*   - "create" --- Triggered after a record is first created.                */
+/*   - "create" --- Triggered after a savable, auto-generated tab group is    */
+/*         shown (but possibly before the "show" event is triggered).         */
 /*   - "delete" --- Triggered after a record is deleted.                      */
 /*   - "prefetch" --- Triggered before the "fetch" event. More specifically,  */
 /*         this event is triggered before a tab group is fetched and          */
@@ -721,6 +776,9 @@ List getRefsMatching(String pattern) {
 /*   - "save" --- Triggered each time a tab group is saved. This includes the */
 /*         first time the tab group is saved as well as subsequent            */
 /*         onSave(String, Boolean) calls.                                     */
+/*   - "firstsave" --- Similar to "save", but only triggered upon the first   */
+/*         save (i.e. the save which creates the arch ent). When this event   */
+/*         is triggered, it occurs immediately before the "save" event.       */
 /*                                                                            */
 /* Additionally, the binding accumulator augments the "load" event so that    */
 /* the `statement` in addOnEvent("module", "load", statement) gets executed   */
@@ -728,7 +786,7 @@ List getRefsMatching(String pattern) {
 /* loaded, including the execution of any asynchronous functions.)            */
 /*                                                                            */
 /* Importantly, a single call to `bindOnEvents` must occur after all the      */
-/* `addOnEvent` and `delOnEvents` calls. Calling `bindOnEvents` is what       */
+/* `addOnEvent` and `delOnEvent` calls. Calling `bindOnEvents` is what        */
 /* actually establishes the bindings once they have been added to the         */
 /* accumulator.                                                               */
 /******************************************************************************/
@@ -757,6 +815,7 @@ CUSTOM_EVENTS.add("focus");
 CUSTOM_EVENTS.add("leave");
 CUSTOM_EVENTS.add("prefetch");
 CUSTOM_EVENTS.add("save");
+CUSTOM_EVENTS.add("firstsave");
 
 List getPrioritised(String statement, int priority) {
   List prioritised = new ArrayList();
@@ -891,6 +950,8 @@ String getStatementsString(String ref, String event) {
 }
 
 void executeOnEvent(String ref, String event) {
+  validateRef(ref);
+
   String stmtsStr = getStatementsString(ref, event);
   execute(stmtsStr);
 }
@@ -913,6 +974,13 @@ void delOnEvent(String ref, String event, String statement) {
     if (statement.equals(obj.get(0)))
       i.remove();
   }
+}
+
+void delOnEvents(String ref, String event) {
+  validateRef(ref);
+
+  String key = getOnEventKey(ref, event);
+  ON_EVT_STMTS.remove(key);
 }
 
 void addOnEvent(String ref, String event, String statement, int precedence) {
@@ -1954,6 +2022,13 @@ void insertIntoLocalSettings(String key, Integer val) {
   insertIntoLocalSettings(key, Integer.toString(val));
 }
 
+void deleteFromLocalSettings(String key) {
+  String q = "DELETE FROM localsettings WHERE key=%s";
+  q = dbReplaceFirst(q, key);
+
+  fetchOne(q);
+}
+
 void insertIntoLocalSettingsOnChange(String ref) {
   String val = getFieldValue(ref);
 
@@ -2416,6 +2491,13 @@ boolean populateMenu(String ref, List entries) {
   return populateMenu(null, ref, "", entries, true);
 }
 
+void populateMenu(String ref, String entry) {
+  List entries  = new ArrayList();
+  entries.add(new NameValuePair(entry, ""));
+
+  populateMenu(ref, entries);
+}
+
 /******************************************************************************/
 /*                             MENU VALUE GETTER                              */
 /*                                                                            */
@@ -2761,6 +2843,8 @@ addActionBarItem("external_gps", new ToggleActionButtonCallback() {
 /******************************************************************************/
 /*                                 USER LOGIN                                 */
 /******************************************************************************/
+boolean USER_MENU_IS_LOADED = false;
+
 void populateListForUsers(){
   String q = "";
   q  = " SELECT          userid ";
@@ -2773,11 +2857,17 @@ void populateListForUsers(){
   q += "   FROM user ";
   q += "  WHERE userdeleted is null";
 
-  fetchAll(q, new FetchCallback() {
+
+  FetchCallback callback = new FetchCallback() {
     onFetch(result) {
       populateMenu(USER_MENU_PATH, result);
+      USER_MENU_IS_LOADED = true;
     }
-  });
+  };
+
+  USER_MENU_IS_LOADED = false;
+  populateMenu(USER_MENU_PATH, MSG_LOADING);
+  fetchAll(q, callback);
 }
 
 String getUserMenuValue(int i) {
@@ -2825,6 +2915,8 @@ if (!isNull(USER_MENU_PATH)) {
 
   addOnEvent(USER_MENU_PATH, "show",  "populateListForUsers()");
   addOnEvent(USER_MENU_PATH, "click", "selectUser()");
+
+  addOnEventCond(USER_MENU_PATH, "click", "USER_MENU_IS_LOADED");
 }
 
 addOnEvent("Login/User_login/Sign_up", "click", "onClickSignup__()");
@@ -2901,6 +2993,8 @@ void validateTrip() {
   f.add(fieldPair("Trip/Shoreline_attributes/Natural_habitat_types", "{Natural_habitat_types}"));
   f.add(fieldPair("Trip/Shoreline_attributes/Artificial_habitat_types", "{Artificial_habitat_types}"));
   f.add(fieldPair("Trip/Shoreline_attributes/Dominant_habitat", "{Dominant_habitat}"));
+  f.add(fieldPair("Trip/Shoreline_attributes/Adjacent_land_use", "{Adjacent_land_use}"));
+  f.add(fieldPair("Trip/Shoreline_attributes/Wastewater_outflows", "{Wastewater_outflows}"));
   f.add(fieldPair("Trip/Shoreline_attributes/Habitat_photo", "{Habitat_photo}"));
   f.add(fieldPair("Trip/Shoreline_attributes/Animals_present", "{Animals_present}"));
   f.add(fieldPair("Trip/Shoreline_attributes/Shoreline_slope", "{Shoreline_slope}"));
@@ -2913,14 +3007,19 @@ void validateTrip() {
 /******************************************************************************/
 /*                                 AUTOSAVING                                 */
 /******************************************************************************/
-Map tabgroupToUuid = Collections.synchronizedMap(new HashMap());
+Map TABGROUP_TO_UUID = Collections.synchronizedMap(new HashMap());
+Set SEEN_UUIDS       = Collections.synchronizedSet(new HashSet());
 
 String getUuid(String tabgroup) {
-  return tabgroupToUuid.get(tabgroup);
+  return TABGROUP_TO_UUID.get(tabgroup);
+}
+
+String getUuid() {
+  return getUuid(getDisplayedTabGroup());
 }
 
 void setUuid(String tabgroup, String uuid) {
-  tabgroupToUuid.put(tabgroup, uuid);
+  TABGROUP_TO_UUID.put(tabgroup, uuid);
 }
 
 void saveTabGroup(String tabgroup) {
@@ -2935,12 +3034,25 @@ void saveTabGroup(String tabgroup, String callback) {
   Boolean userWasSet          = !username.equals("");
 
   callback += "; " + fun2str("executeOnEvent", new Object[]{tabgroup, "save"});
+  callbackFirstSave =
+    fun2str("executeOnEvent", new Object[]{tabgroup, "firstsave"}) + "; " +
+    callback;
 
   parentTabgroup = null;
 
   SaveCallback saveCallback  = new SaveCallback() {
     onSave(uuid, newRecord) {
       setUuid(tabgroup, uuid);
+
+      // This is a workaround for a bug where `newRecord` can be `true` twice if
+      // a record was saved again shortly after it was created.
+      if (SEEN_UUIDS.contains(uuid))
+        newRecord = false;
+      if (uuid != null)
+        SEEN_UUIDS.add(uuid);
+
+      String cb = newRecord ? callbackFirstSave : callback;
+
       // Make a child-parent relationship if need be.
       if (
           newRecord &&
@@ -2957,10 +3069,10 @@ void saveTabGroup(String tabgroup, String callback) {
           uuid,
           "Parent Of",
           "Child Of",
-          callback
+          cb
         );
       } else {
-        execute(callback);
+        execute(cb);
       }
 
       // This fixes an interesting bug. Without this, if a user was not set
@@ -2971,7 +3083,7 @@ void saveTabGroup(String tabgroup, String callback) {
       // Adding this allows subsequent saves to succeed. Presumably it plays
       // some role in helping FAIMS associate the correct user with a record.
       if (!userWasSet) {
-        saveTabGroup(tabgroup, callback);
+        saveTabGroup(tabgroup, cb);
       }
 
     }
@@ -3172,10 +3284,9 @@ void saveEntitiesToRel(String type, String entity1, String entity2, String callb
 /** Saves two entity id's as a hierachical relation with some callback executed. **/
 void saveEntitiesToHierRel(String type, String entity1, String entity2, String e1verb, String e2verb, String callback) {
   if (isNull(entity1) || isNull(entity2)) return;
-  saveRel(null, type, null, null, new SaveCallback() {
-    onSave(rel_id, newRecord) {
-      addReln(entity1, rel_id, e1verb);
-      addReln(entity2, rel_id, e2verb);
+
+  SaveCallback execCallback = new SaveCallback() {
+    onSaveAssociation(entity_id, rel_id) {
       if(!isNull(callback)) {
          execute(callback);
       }
@@ -3184,7 +3295,29 @@ void saveEntitiesToHierRel(String type, String entity1, String entity2, String e
       Log.e("saveEntitiesToHierRel", message);
       showToast(message);
     }
-  });
+  };
+
+  SaveCallback addMoreToRel = new SaveCallback() {
+    onSaveAssociation(entity_id, rel_id) {
+      addReln(entity2, rel_id, e2verb, execCallback);
+    }
+    onError(message) {
+      Log.e("saveEntitiesToHierRel", message);
+      showToast(message);
+    }
+  };
+
+  SaveCallback addToRel = new SaveCallback() {
+    onSave(rel_id, newRecord) {
+      addReln(entity1, rel_id, e1verb, addMoreToRel);
+    }
+    onError(message) {
+      Log.e("saveEntitiesToHierRel", message);
+      showToast(message);
+    }
+  };
+
+  saveRel(null, type, null, null, addToRel);
 }
 
 // Makes a new record of the given tabgroup
@@ -3246,10 +3379,19 @@ void deleteRecord(String tabgroup) {
 }
 
 void reallyDeleteRecord(String tabgroup) {
-  deleteArchEnt(getUuid(tabgroup));
+  DeleteCallback callback = new DeleteCallback() {
+    onDelete(uuid) {
+      populateEntityListsOfArchEnt(tabgroup);
+      executeOnEvent(tabgroup, "delete");
+    }
+
+    onError(message) {
+      showToast(message);
+    }
+  };
+
+  deleteArchEnt(getUuid(tabgroup), callback);
   cancelTabGroup(tabgroup, false);
-  populateEntityListsOfArchEnt(tabgroup);
-  executeOnEvent(tabgroup, "delete");
 }
 
 // Duplicates the current record of the given tabgroup
@@ -3566,6 +3708,7 @@ void search(){
   searchQuery = dbReplaceFirst(searchQuery, "{type}", type);
   searchQuery = dbReplaceFirst(searchQuery, "{type}", type);
 
+  populateMenu(refEntityList, MSG_LOADING);
   populateCursorList(refEntityList, searchQuery, 25);
   refreshTabgroupCSS("General");
 
@@ -3796,6 +3939,9 @@ void incAutoNum(String destPath) {
 /*                         POPULATION VIA <MARKDOWN>                          */
 /******************************************************************************/
 populateWebViewHtml("Login/User_login/Signup_Guide_1", "<hr />\n<p>In order to sign up, please ensure:</p>\n<ol style=\"list-style-type: decimal\">\n<li>Your device is online</li>\n<li>FAIMS is connected to the correct server</li>\n<li>You have choosen a strong password</li>\n</ol>\n<p>A strong password has at least 6 characters, 1 uppercase letter, 1 lowercase letter, 1 digit and 1 symbol. Examples of strong passwords:</p>\n<ul>\n<li>Bond@007</li>\n<li>Dig.123</li>\n</ul>\n");
+populateWebViewHtml("Trip/Trip_data/GPS_Guide", "<p>Pick a location at which to observe the shoreline</p>\n");
+populateWebViewHtml("Trip/Shellfish_Aggregation/Add_Shellfish_Aggregation_Guide", "<p>Add a new kind of aggregate to the current trip/shoreline</p>\n");
+populateWebViewHtml("Trip/Shellfish_Aggregation/Existing_Aggregations_Guide", "<p>The list below will show the aggregates documented previously at this location</p>\n");
 
 /******************************************************************************/
 /*                POPULATION OF ENTITY AND CHILD ENTITY LISTS                 */
@@ -4057,6 +4203,12 @@ void search(){
 
   Log.d("Module", "Search query: " + searchQuery);
 }
+/*************************** CHECK FOR MISSING DATA ***************************/
+addOnEvent(
+    "Trip/Shoreline_attributes/Check_for_Missing_Data",
+    "click",
+    "validateTrip()"
+);
   
 
 /******************************************************************************/

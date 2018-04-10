@@ -1,0 +1,6 @@
+/*************************** CHECK FOR MISSING DATA ***************************/
+addOnEvent(
+    "Trip/Shoreline_attributes/Check_for_Missing_Data",
+    "click",
+    "validateTrip()"
+);

@@ -67,6 +67,7 @@
                 </Col_2>
               </Colgroup_1>
               <Subregion/>
+              <GPS_Guide/>
               <Colgroup_2>
                 <Col_1>
                   <Latitude/>
@@ -92,13 +93,18 @@
               <Natural_habitat_types/>
               <Artificial_habitat_types/>
               <Dominant_habitat/>
+              <Adjacent_land_use/>
+              <Wastewater_outflows/>
               <Habitat_photo/>
               <Habitat_photo_Button_1/>
               <Animals_present/>
               <Shoreline_slope/>
+              <Check_for_Missing_Data/>
             </Shoreline_attributes>
             <Shellfish_Aggregation>
+              <Add_Shellfish_Aggregation_Guide/>
               <Add_Shellfish_Aggregation/>
+              <Existing_Aggregations_Guide/>
               <Existing_Aggregations/>
             </Shellfish_Aggregation>
           </Trip>
@@ -278,6 +284,9 @@
             <value>Options not loaded</value>
           </item>
         </select1>
+        <input faims_web="true" ref="GPS_Guide">
+          <label/>
+        </input>
         <group ref="Colgroup_2" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
@@ -337,6 +346,20 @@
         <input faims_attribute_name="Dominant habitat" faims_attribute_type="measure" ref="Dominant_habitat" faims_style_class="required">
           <label>{Dominant_habitat}</label>
         </input>
+        <select faims_attribute_name="Adjacent land use" faims_attribute_type="vocab" ref="Adjacent_land_use" faims_style_class="required">
+          <label>{Adjacent_land_use}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select>
+        <select1 appearance="full" faims_attribute_name="Wastewater outflows" faims_attribute_type="vocab" ref="Wastewater_outflows" faims_style_class="required">
+          <label>{Wastewater_outflows}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
         <select faims_sync="true" type="camera" faims_attribute_name="Habitat photo" faims_attribute_type="measure" ref="Habitat_photo" faims_style_class="required">
           <label>{Habitat_photo}</label>
           <item>
@@ -361,12 +384,21 @@
             <value>Options not loaded</value>
           </item>
         </select1>
+        <trigger ref="Check_for_Missing_Data">
+          <label>{Check_for_Missing_Data}</label>
+        </trigger>
       </group>
       <group ref="Shellfish_Aggregation" faims_scrollable="false">
         <label>{Shellfish_Aggregation}</label>
+        <input faims_web="true" ref="Add_Shellfish_Aggregation_Guide">
+          <label/>
+        </input>
         <trigger ref="Add_Shellfish_Aggregation" faims_annotation="false" faims_certainty="false">
           <label>{Add_Shellfish_Aggregation}</label>
         </trigger>
+        <input faims_web="true" ref="Existing_Aggregations_Guide">
+          <label/>
+        </input>
         <select1 appearance="compact" ref="Existing_Aggregations" faims_annotation="false" faims_certainty="false">
           <label>{Existing_Aggregations}</label>
           <item>
@@ -405,7 +437,7 @@
             <value>Options not loaded</value>
           </item>
         </select1>
-        <select1 type="image" faims_attribute_name="Shellfish species" faims_attribute_type="vocab" ref="Shellfish_species">
+        <select1 type="image" faims_attribute_name="Shellfish species" faims_attribute_type="vocab" ref="Shellfish_species" faims_html_description="true">
           <label>{Shellfish_species}</label>
           <item>
             <label>Options not loaded</label>
