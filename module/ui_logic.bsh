@@ -2895,6 +2895,19 @@ String validateFields(List fields, String format) {
   return out;
 }
 
+void validateTrip() {
+  List f = new ArrayList(); // Fields to be validated
+  f.add(fieldPair("Trip/Trip_data/Subregion", "{Subregion}"));
+  f.add(fieldPair("Trip/Shoreline_attributes/Natural_habitat_types", "{Natural_habitat_types}"));
+  f.add(fieldPair("Trip/Shoreline_attributes/Artificial_habitat_types", "{Artificial_habitat_types}"));
+  f.add(fieldPair("Trip/Shoreline_attributes/Dominant_habitat", "{Dominant_habitat}"));
+  f.add(fieldPair("Trip/Shoreline_attributes/Habitat_photo", "{Habitat_photo}"));
+  f.add(fieldPair("Trip/Shoreline_attributes/Animals_present", "{Animals_present}"));
+  f.add(fieldPair("Trip/Shoreline_attributes/Shoreline_slope", "{Shoreline_slope}"));
+
+  String validationMessage = validateFields(f, "PLAINTEXT");
+  showWarning("{validation_results}", validationMessage);
+}
 
 
 /******************************************************************************/
@@ -3088,7 +3101,7 @@ void removeNavigationButtons() {
 void addNavigationButtons(String tabgroup) {
   removeNavigationButtons();
   List tabgroupsToValidate = new ArrayList();
-  
+  tabgroupsToValidate.add("Trip");
   addNavigationButton("new", new ActionButtonCallback() {
     actionOnLabel() {
       "{New}";

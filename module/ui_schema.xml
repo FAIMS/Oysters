@@ -271,7 +271,7 @@
             </input>
           </group>
         </group>
-        <select1 faims_attribute_name="Trip Subregion" faims_attribute_type="vocab" ref="Subregion">
+        <select1 faims_attribute_name="Trip Subregion" faims_attribute_type="vocab" ref="Subregion" faims_style_class="required">
           <label>{Subregion}</label>
           <item>
             <label>Options not loaded</label>
@@ -320,24 +320,24 @@
       </group>
       <group ref="Shoreline_attributes">
         <label>{Shoreline_attributes}</label>
-        <select faims_attribute_name="Natural habitat types" faims_attribute_type="vocab" ref="Natural_habitat_types">
+        <select faims_attribute_name="Natural habitat types" faims_attribute_type="vocab" ref="Natural_habitat_types" faims_style_class="required">
           <label>{Natural_habitat_types}</label>
           <item>
             <label>Options not loaded</label>
             <value>Options not loaded</value>
           </item>
         </select>
-        <select faims_attribute_name="Artificial habitat types" faims_attribute_type="vocab" ref="Artificial_habitat_types">
+        <select faims_attribute_name="Artificial habitat types" faims_attribute_type="vocab" ref="Artificial_habitat_types" faims_style_class="required">
           <label>{Artificial_habitat_types}</label>
           <item>
             <label>Options not loaded</label>
             <value>Options not loaded</value>
           </item>
         </select>
-        <input faims_attribute_name="Dominant habitat" faims_attribute_type="measure" ref="Dominant_habitat">
+        <input faims_attribute_name="Dominant habitat" faims_attribute_type="measure" ref="Dominant_habitat" faims_style_class="required">
           <label>{Dominant_habitat}</label>
         </input>
-        <select faims_sync="true" type="camera" faims_attribute_name="Habitat photo" faims_attribute_type="measure" ref="Habitat_photo">
+        <select faims_sync="true" type="camera" faims_attribute_name="Habitat photo" faims_attribute_type="measure" ref="Habitat_photo" faims_style_class="required">
           <label>{Habitat_photo}</label>
           <item>
             <label>Options not loaded</label>
@@ -347,14 +347,14 @@
         <trigger ref="Habitat_photo_Button_1">
           <label>{Habitat_photo}</label>
         </trigger>
-        <select faims_attribute_name="Animals present" faims_attribute_type="vocab" ref="Animals_present">
+        <select faims_attribute_name="Animals present" faims_attribute_type="vocab" ref="Animals_present" faims_style_class="required">
           <label>{Animals_present}</label>
           <item>
             <label>Options not loaded</label>
             <value>Options not loaded</value>
           </item>
         </select>
-        <select1 faims_attribute_name="Shoreline slope" faims_attribute_type="vocab" ref="Shoreline_slope">
+        <select1 faims_attribute_name="Shoreline slope" faims_attribute_type="vocab" ref="Shoreline_slope" faims_style_class="required">
           <label>{Shoreline_slope}</label>
           <item>
             <label>Options not loaded</label>

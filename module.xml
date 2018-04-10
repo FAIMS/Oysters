@@ -27,7 +27,7 @@
         <Date f="readonly"/>
         <Time f="readonly"/>
       </cols>
-      <Subregion>
+      <Subregion f="notnull">
         <opts>
           <opt>NSW
             <opt>Sydney region
@@ -91,7 +91,7 @@
       <gps/>
     </Trip_data>
     <Shoreline_attributes>
-      <Natural_habitat_types t="checkbox">
+      <Natural_habitat_types t="checkbox" f="notnull">
         <desc>Identify the natural habitat type(s) present at this location</desc>
         <opts>
           <opt>Mudflat</opt>
@@ -101,7 +101,7 @@
           <opt>Mangroves</opt>
         </opts>
       </Natural_habitat_types>
-      <Artificial_habitat_types t="checkbox">
+      <Artificial_habitat_types t="checkbox" f="notnull">
         <desc>Identify the artificial habitat type(s) present at this location</desc>
         <opts>
           <opt>Concrete</opt>
@@ -111,13 +111,13 @@
           <opt>Wooden pier</opt>
         </opts>
       </Artificial_habitat_types>
-      <Dominant_habitat>
+      <Dominant_habitat f="notnull">
         <desc>Note the habitat type that is dominant (takes up the most area) at this location</desc>
       </Dominant_habitat>
-      <Habitat_photo t="camera">
+      <Habitat_photo t="camera" f="notnull">
         <desc>Take a photo of the dominant habitat type</desc>
       </Habitat_photo>
-      <Animals_present t="checkbox">
+      <Animals_present t="checkbox" f="notnull">
         <desc>Scan the dominant habitat type and check any types of animals that you can see easily. Please enter further details for any aggregations of attached shellfish.</desc>
         <opts>
           <opt>Attached shellfish (oysters, mussels)</opt>
@@ -129,7 +129,7 @@
           <opt>Worms</opt>
         </opts>
       </Animals_present>
-      <Shoreline_slope>
+      <Shoreline_slope f="notnull">
         <opts>
           <opt>Vertical or near-vertical</opt>
           <opt>Sloping more than 45 degrees</opt>

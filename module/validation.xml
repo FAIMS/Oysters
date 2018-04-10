@@ -1,2 +1,35 @@
 <?xml version='1.0' encoding='utf-8'?>
-<ValidationSchema/>
+<ValidationSchema>
+  <ArchaeologicalElement name="Trip">
+    <property name="Trip Subregion">
+      <validator type="blankchecker">
+        <param type="field" value="vocab"/>
+      </validator>
+    </property>
+    <property name="Natural habitat types">
+      <validator type="blankchecker">
+        <param type="field" value="vocab"/>
+      </validator>
+    </property>
+    <property name="Artificial habitat types">
+      <validator type="blankchecker">
+        <param type="field" value="vocab"/>
+      </validator>
+    </property>
+    <property name="Dominant habitat">
+      <validator type="blankchecker">
+        <param type="field" value="measure"/>
+      </validator>
+    </property>
+    <property name="Animals present">
+      <validator type="blankchecker">
+        <param type="field" value="vocab"/>
+      </validator>
+    </property>
+    <property name="Shoreline slope">
+      <validator type="blankchecker">
+        <param type="field" value="vocab"/>
+      </validator>
+    </property>
+  </ArchaeologicalElement>
+</ValidationSchema>
