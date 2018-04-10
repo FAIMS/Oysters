@@ -528,6 +528,15 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: webview
+        Ref:  Trip/Shellfish_Aggregation/HR_Guide
+     */
+    public static View get_Trip_ShellfishAggregation_HRGuide(Solo solo) {
+        String ref = "Trip/Shellfish_Aggregation/HR_Guide";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: webview
         Ref:  Trip/Trip_data/GPS_Guide
      */
     public static View get_Trip_Tripdata_GPSGuide(Solo solo) {

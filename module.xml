@@ -170,6 +170,9 @@ Add a new kind of aggregate to the current trip/shoreline
         </markdown>
       </Add_Shellfish_Aggregation_Guide>
       <Add_Shellfish_Aggregation t="button" f="nocertainty noannotation" lc="Shellfish_Aggregation"/>
+      <HR_Guide f="nolabel" t="webview">
+        <markdown>\ </markdown>
+      </HR_Guide>
       <Existing_Aggregations_Guide f="nolabel" t="webview">
         <markdown>
 The list below will show the aggregates documented previously at this location

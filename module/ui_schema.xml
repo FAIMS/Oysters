@@ -104,6 +104,7 @@
             <Shellfish_Aggregation>
               <Add_Shellfish_Aggregation_Guide/>
               <Add_Shellfish_Aggregation/>
+              <HR_Guide/>
               <Existing_Aggregations_Guide/>
               <Existing_Aggregations/>
             </Shellfish_Aggregation>
@@ -396,6 +397,9 @@
         <trigger ref="Add_Shellfish_Aggregation" faims_annotation="false" faims_certainty="false">
           <label>{Add_Shellfish_Aggregation}</label>
         </trigger>
+        <input faims_web="true" ref="HR_Guide">
+          <label/>
+        </input>
         <input faims_web="true" ref="Existing_Aggregations_Guide">
           <label/>
         </input>
