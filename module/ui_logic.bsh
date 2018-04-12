@@ -311,6 +311,7 @@ List    NODATA_TAB_GROUPS              = new ArrayList();
 NODATA_TAB_GROUPS.add("Login");
   NODATA_TAB_GROUPS.add("General");
 
+REF_TO_TYPE.put("Login/User_login/Guide_User_Login", "webview");
 REF_TO_TYPE.put("Login/User_login/Users", "dropdown");
 REF_TO_TYPE.put("Login/User_login/Log_in", "button");
 REF_TO_TYPE.put("Login/User_login/Signup_Guide_1", "webview");
@@ -3939,11 +3940,12 @@ void incAutoNum(String destPath) {
 /******************************************************************************/
 /*                         POPULATION VIA <MARKDOWN>                          */
 /******************************************************************************/
-populateWebViewHtml("Login/User_login/Signup_Guide_1", "<hr />\n<p>In order to sign up, please ensure:</p>\n<ol style=\"list-style-type: decimal\">\n<li>Your device is online</li>\n<li>FAIMS is connected to the correct server</li>\n<li>You have choosen a strong password</li>\n</ol>\n<p>A strong password has at least 6 characters, 1 uppercase letter, 1 lowercase letter, 1 digit and 1 symbol. Examples of strong passwords:</p>\n<ul>\n<li>Bond@007</li>\n<li>Dig.123</li>\n</ul>\n");
+populateWebViewHtml("Login/User_login/Guide_User_Login", "<p>To login, please, select your name from the list of Users below, or if it’s your first time, register with the Sign up button.</p>\n");
+populateWebViewHtml("Login/User_login/Signup_Guide_1", "<hr />\n<p>In order to sign up, please ensure:</p>\n<ol style=\"list-style-type: decimal\">\n<li>Your device is online</li>\n<li>You have choosen a strong password</li>\n</ol>\n<p>A strong password has at least 6 characters, 1 uppercase letter, 1 lowercase letter, 1 digit and 1 symbol. Examples of strong passwords:</p>\n<ul>\n<li>Bond@007</li>\n<li>Dig.123</li>\n</ul>\n");
 populateWebViewHtml("Trip/Trip_data/GPS_Guide", "<p>Pick a location at which to observe the shoreline</p>\n");
-populateWebViewHtml("Trip/Shellfish_Aggregation/Add_Shellfish_Aggregation_Guide", "<p>Add a new kind of aggregate to the current trip/shoreline</p>\n");
+populateWebViewHtml("Trip/Shellfish_Aggregation/Add_Shellfish_Aggregation_Guide", "<p>Add a new kind of shellfish aggregation to the current trip/shoreline</p>\n");
 populateWebViewHtml("Trip/Shellfish_Aggregation/HR_Guide", "<br />\n\n");
-populateWebViewHtml("Trip/Shellfish_Aggregation/Existing_Aggregations_Guide", "<p>The list below will show the aggregates documented previously at this location</p>\n");
+populateWebViewHtml("Trip/Shellfish_Aggregation/Existing_Aggregations_Guide", "<p>The list below will show the shellfish aggregations documented previously at this location</p>\n");
 
 /******************************************************************************/
 /*                POPULATION OF ENTITY AND CHILD ENTITY LISTS                 */

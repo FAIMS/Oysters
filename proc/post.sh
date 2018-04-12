@@ -67,6 +67,9 @@ replacement="
               <\/Colgroup_2>"
 perl -0777 -i.original -pe "s/$string/$replacement/igs" ui_schema.xml
 
+string="<li>FAIMS is connected to the correct server<\/li>\\\\n"
+replacement=""
+perl -0777 -i.original -pe "s/$string/$replacement/igs" ui_logic.bsh
 
 cat << EOF >> english.0.properties
 Select_User=Select User
@@ -75,4 +78,11 @@ Select_Region=Select Region
 Select_Subregion=Select Subregion
 EOF
 
+cat << EOF >> ui_styling.css
+.orange {
+  background-color: orange;
+}
+EOF
+
 rm ui_schema.xml.original
+rm ui_logic.bsh.original

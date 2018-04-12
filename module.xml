@@ -3,6 +3,12 @@
 <module>
   <Login f="nodata">
     <User_login>
+      <Guide_User_Login t="webview" f="nolabel">
+        <markdown>
+To login, please, select your name from the list of Users below, or if it's your
+first time, register with the Sign up button.
+        </markdown>
+      </Guide_User_Login>
       <Users t="dropdown" f="user nocertainty noannotation"/>
       <Log_in  t="button" ll="General"/>
       <Sign_up t="button" l="signup"/>
@@ -161,12 +167,12 @@ Pick a location at which to observe the shoreline
           <opt>Flat</opt>
         </opts>
       </Shoreline_slope>
-      <Check_for_Missing_Data t="button"/>
+      <Check_for_Missing_Data t="button" c="orange"/>
     </Shoreline_attributes>
     <Shellfish_Aggregation f="noscroll">
       <Add_Shellfish_Aggregation_Guide f="nolabel" t="webview">
         <markdown>
-Add a new kind of aggregate to the current trip/shoreline
+Add a new kind of shellfish aggregation to the current trip/shoreline
         </markdown>
       </Add_Shellfish_Aggregation_Guide>
       <Add_Shellfish_Aggregation t="button" f="nocertainty noannotation" lc="Shellfish_Aggregation"/>
@@ -175,7 +181,7 @@ Add a new kind of aggregate to the current trip/shoreline
       </HR_Guide>
       <Existing_Aggregations_Guide f="nolabel" t="webview">
         <markdown>
-The list below will show the aggregates documented previously at this location
+The list below will show the shellfish aggregations documented previously at this location
         </markdown>
       </Existing_Aggregations_Guide>
       <Existing_Aggregations t="list" f="nocertainty noannotation" ec="Shellfish_Aggregation"/>

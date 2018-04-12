@@ -20,6 +20,7 @@
           <!--END: Style-->
           <Login>
             <User_login>
+              <Guide_User_Login/>
               <Users/>
               <Log_in/>
               <Signup_Guide_1/>
@@ -168,6 +169,9 @@
       <label>{Login}</label>
       <group ref="User_login">
         <label>{User_login}</label>
+        <input faims_web="true" ref="Guide_User_Login">
+          <label/>
+        </input>
         <select1 ref="Users" faims_annotation="false" faims_certainty="false">
           <label>{Users}</label>
           <item>
@@ -385,7 +389,7 @@
             <value>Options not loaded</value>
           </item>
         </select1>
-        <trigger ref="Check_for_Missing_Data">
+        <trigger ref="Check_for_Missing_Data" faims_style_class="orange">
           <label>{Check_for_Missing_Data}</label>
         </trigger>
       </group>

@@ -501,6 +501,15 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: webview
+        Ref:  Login/User_login/Guide_User_Login
+     */
+    public static View get_Login_Userlogin_GuideUserLogin(Solo solo) {
+        String ref = "Login/User_login/Guide_User_Login";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: webview
         Ref:  Login/User_login/Signup_Guide_1
      */
     public static View get_Login_Userlogin_SignupGuide1(Solo solo) {
