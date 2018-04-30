@@ -13,6 +13,14 @@ first time, register with the Sign up button.
       <Log_in  t="button" ll="General"/>
       <Sign_up t="button" l="signup"/>
     </User_login>
+    <Manual>
+      <Manual t="webview" f="nolabel">
+        <markdown>
+        <!--@SOURCE: markdown/instructions.md-->
+        </markdown>
+      </Manual>
+      <Go_to_Login_Tab t="button" l="Login/User_login"/>
+    </Manual>
   </Login>
 
   <General f="nodata">
@@ -20,6 +28,14 @@ first time, register with the Sign up button.
       <Start_Trip l="Trip"/>
     </General>
     <search/>
+    <Manual>
+      <Manual t="webview" f="nolabel">
+        <markdown>
+        <!--@SOURCE: markdown/instructions.md-->
+        </markdown>
+      </Manual>
+      <Go_to_General_Tab t="button" l="General/General"/>
+    </Manual>
   </General>
 
   <Trip>

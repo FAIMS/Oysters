@@ -26,6 +26,10 @@
               <Signup_Guide_1/>
               <Sign_up/>
             </User_login>
+            <Manual>
+              <Manual/>
+              <Go_to_Login_Tab/>
+            </Manual>
           </Login>
           <General>
             <General>
@@ -55,6 +59,10 @@
               </Colgroup_2>
               <Entity_List/>
             </Search>
+            <Manual>
+              <Manual/>
+              <Go_to_General_Tab/>
+            </Manual>
           </General>
           <Trip>
             <Trip_data>
@@ -189,6 +197,15 @@
           <label>{Sign_up}</label>
         </trigger>
       </group>
+      <group ref="Manual">
+        <label>{Manual}</label>
+        <input faims_web="true" ref="Manual">
+          <label/>
+        </input>
+        <trigger ref="Go_to_Login_Tab">
+          <label>{Go_to_Login_Tab}</label>
+        </trigger>
+      </group>
     </group>
     <group ref="General">
       <label>{General}</label>
@@ -258,6 +275,15 @@
             <value>Options not loaded</value>
           </item>
         </select1>
+      </group>
+      <group ref="Manual">
+        <label>{Manual}</label>
+        <input faims_web="true" ref="Manual">
+          <label/>
+        </input>
+        <trigger ref="Go_to_General_Tab">
+          <label>{Go_to_General_Tab}</label>
+        </trigger>
       </group>
     </group>
     <group ref="Trip" faims_archent_type="Trip">
