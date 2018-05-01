@@ -68,6 +68,9 @@ If you have any questions about the module, please contact the FAIMS team at **e
 <p align="left">
  <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174810.png" width="250"/>
   <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20171101-174827.png" width="250"/>
-  
+  <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20180501-112921.png" width="250"/>
 </p>
 
+<p align="left">
+ <img src="https://github.com/FAIMS/Oysters/blob/master/screenshots/Screenshot_20180501-112927.png" width="250"/>
+</p>
