@@ -484,9 +484,10 @@ information:
     </Aggregation_Attributes>
   </Shellfish_Aggregation>
   <logic><![CDATA[
-    <!--@SOURCE: logic/date_time.bsh-->
-    <!--@SOURCE: logic/custom_dropdown_for_search.bsh-->
-    <!--@SOURCE: logic/custom-search.bsh-->
-    <!--@SOURCE: logic/check-for-missing-data-button.bsh-->
+<!--@SOURCE: logic/date_time.bsh-->
+<!--@SOURCE: logic/custom_dropdown_for_search.bsh-->
+<!--@SOURCE: logic/custom-search.bsh-->
+<!--@SOURCE: logic/check-for-missing-data-button.bsh-->
+<!--@SOURCE: logic/enable-gps.bsh-->
   ]]></logic>
 </module>
