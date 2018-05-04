@@ -46,11 +46,7 @@ More detailed help on navigating within FAIMS Mobile is available at:
 
 To start a trip in **Your**Shore, simply click on the ‘Start Trip’ bar that appears after the sign-on page. You will then be taken to the trip page, where tabs will show the three categories of records that can be entered: trip data, shoreline attributes and shellfish aggregations.
 
-![](files/data/guide/general-tab-group.png)
-
-![](files/data/guide/trip.png)
-
-
+![](files/data/guide/general-tab-group-328-115.png) ![](files/data/guide/trip-328-115.png)
 
 For your trip to be recorded in the **Your**Shore database, you will need to enter the following details within the ‘TRIP DATA’ tab:
 
@@ -180,4 +176,4 @@ For more information on shellfish species, characteristics, and restoration stat
 
 * World Harbour Project: [http://www.worldharbourproject.org/](http://www.worldharbourproject.org/)
 
-![](files/data/guide/faims-logo.png) ![](files/data/guide/ashore.jpg)
+![](files/data/guide/faims-logo-95-95.png) ![](files/data/guide/ashore-147-95.png)

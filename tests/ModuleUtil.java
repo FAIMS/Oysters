@@ -52,6 +52,24 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: tab
+        Ref:  General/Manual
+     */
+    public static View get_General_Manual(Solo solo) {
+        String ref = "General/Manual";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: tab
+        Ref:  Login/Manual
+     */
+    public static View get_Login_Manual(Solo solo) {
+        String ref = "Login/Manual";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: tab
         Ref:  Login/User_login
      */
     public static View get_Login_Userlogin(Solo solo) {
@@ -114,10 +132,28 @@ public class ModuleUtil extends ModuleHelper {
 
     /*
         Type: button
+        Ref:  General/Manual/Start_Recording
+     */
+    public static View get_General_Manual_StartRecording(Solo solo) {
+        String ref = "General/Manual/Start_Recording";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: button
         Ref:  General/Search/Search_Button
      */
     public static View get_General_Search_SearchButton(Solo solo) {
         String ref = "General/Search/Search_Button";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: button
+        Ref:  Login/Manual/Go_to_Login_Tab
+     */
+    public static View get_Login_Manual_GotoLoginTab(Solo solo) {
+        String ref = "Login/Manual/Go_to_Login_Tab";
         return (android.view.View) solo.getView((Object) ref);
     }
 
@@ -496,6 +532,24 @@ public class ModuleUtil extends ModuleHelper {
      */
     public static View get_Trip_Shorelineattributes_Wastewateroutflows(Solo solo) {
         String ref = "Trip/Shoreline_attributes/Wastewater_outflows";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: webview
+        Ref:  General/Manual/Manual
+     */
+    public static View get_General_Manual_Manual(Solo solo) {
+        String ref = "General/Manual/Manual";
+        return (android.view.View) solo.getView((Object) ref);
+    }
+
+    /*
+        Type: webview
+        Ref:  Login/Manual/Manual
+     */
+    public static View get_Login_Manual_Manual(Solo solo) {
+        String ref = "Login/Manual/Manual";
         return (android.view.View) solo.getView((Object) ref);
     }
 

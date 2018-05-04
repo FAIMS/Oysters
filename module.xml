@@ -16,7 +16,7 @@ first time, register with the Sign up button.
     <Manual>
       <Manual t="webview" f="nolabel">
         <markdown>
-        <!--@SOURCE: markdown/instructions.md-->
+<!--@SOURCE: markdown/instructions.md-->
         </markdown>
       </Manual>
       <Go_to_Login_Tab t="button" l="Login/User_login"/>
@@ -31,10 +31,10 @@ first time, register with the Sign up button.
     <Manual>
       <Manual t="webview" f="nolabel">
         <markdown>
-        <!--@SOURCE: markdown/instructions.md-->
+<!--@SOURCE: markdown/instructions.md-->
         </markdown>
       </Manual>
-      <Go_to_General_Tab t="button" l="General/General"/>
+      <Start_Recording t="button" l="General/General" c="green"/>
     </Manual>
   </General>
 

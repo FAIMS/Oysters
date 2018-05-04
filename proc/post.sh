@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+cd data
+tar -cvzf ../module/data.tar.gz * >/dev/null
+cd -
+
 cd module
 
 string="
@@ -79,9 +83,8 @@ Select_Subregion=Select Subregion
 EOF
 
 cat << EOF >> ui_styling.css
-.orange {
-  background-color: orange;
-}
+.orange { background-color: orange;  }
+.green  { background-color: #6BD959; }
 EOF
 
 rm ui_schema.xml.original

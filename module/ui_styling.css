@@ -4,6 +4,5 @@
 .required-label {
   color: red;
 }
-.orange {
-  background-color: orange;
-}
+.orange { background-color: orange;  }
+.green  { background-color: #6BD959; }

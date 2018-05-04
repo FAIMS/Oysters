@@ -61,7 +61,7 @@
             </Search>
             <Manual>
               <Manual/>
-              <Go_to_General_Tab/>
+              <Start_Recording/>
             </Manual>
           </General>
           <Trip>
@@ -281,8 +281,8 @@
         <input faims_web="true" ref="Manual">
           <label/>
         </input>
-        <trigger ref="Go_to_General_Tab">
-          <label>{Go_to_General_Tab}</label>
+        <trigger ref="Start_Recording" faims_style_class="green">
+          <label>{Start_Recording}</label>
         </trigger>
       </group>
     </group>
