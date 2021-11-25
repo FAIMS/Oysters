@@ -1,5 +1,5 @@
 # About this module:
-This module was created for the **YourShore**, based in Sydney, Australia. The module has been designed to collect wide-ranging data about the existing remnant shellfish reefs in Australia. The app has been specifically designed to engage the public with their local environment, allowing non-specialists users to record basic information about the types of habitat and existing shellfish aggregations found at their local shorelines.
+This module was created for the **YourShore** project, based in Sydney, Australia. The module has been designed to collect wide-ranging data about the existing remnant shellfish reefs in Australia. The app has been specifically designed to engage the public with their local environment, allowing non-specialists users to record basic information about the types of habitat and existing shellfish aggregations found at their local shorelines.
 
 ## Authorship:
 This module was co-developed by Elisa Bone at Ashore Consulting, Sydney and Adela Sobotkova and Petra Janouchova at the FAIMS Project, Department of Ancient History, Macquarie University.
